@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Free Percentage Calculator - Calculate Percentages Online | CreatorKit</title>
+
+  <meta name="description" content="Use CreatorKit's free Percentage Calculator to calculate percentages, percentage increases, decreases and what percent one number is of another.">
+
+  <meta name="keywords" content="percentage calculator, percent calculator, calculate percentage, percentage increase calculator, percentage decrease calculator, free calculator">
+
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://chethanthegamester.github.io/CreatorKit/percentage-calculator/">
+
+  <meta property="og:title" content="Free Percentage Calculator | CreatorKit">
+  <meta property="og:description" content="Calculate percentages, increases and decreases instantly with this free online calculator.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://chethanthegamester.github.io/CreatorKit/percentage-calculator/">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #020617;
+      border-bottom: 1px solid #1e293b;
+      padding: 18px 20px;
+    }
+
+    nav {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      color: #38bdf8;
+      font-size: 24px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    nav a {
+      color: #cbd5e1;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #38bdf8;
+    }
+
+    .hero {
+      max-width: 900px;
+      margin: auto;
+      padding: 70px 20px 40px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(34px, 6vw, 58px);
+      color: white;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: auto;
+      color: #94a3b8;
+      font-size: 18px;
+    }
+
+    .tool-box {
+      max-width: 850px;
+      margin: 20px auto 70px;
+      padding: 30px;
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 18px;
+    }
+
+    .calculator {
+      background: #0f172a;
+      border: 1px solid #334155;
+      border-radius: 14px;
+      padding: 22px;
+      margin-bottom: 20px;
+    }
+
+    .calculator h2 {
+      margin-top: 0;
+      color: white;
+      font-size: 21px;
+    }
+
+    .calculator p {
+      color: #94a3b8;
+    }
+
+    .inputs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    label {
+      display: block;
+      color: #f8fafc;
+      font-weight: bold;
+      margin-bottom: 7px;
+    }
+
+    input {
+      width: 100%;
+      padding: 13px;
+      background: #1e293b;
+      color: white;
+      border: 1px solid #475569;
+      border-radius: 9px;
+      font-size: 16px;
+      outline: none;
+    }
+
+    input:focus {
+      border-color: #38bdf8;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      margin-top: 15px;
+      border: none;
+      border-radius: 9px;
+      background: #38bdf8;
+      color: #082f49;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #7dd3fc;
+    }
+
+    .result {
+      display: none;
+      margin-top: 15px;
+      padding: 15px;
+      border-radius: 9px;
+      background: #1e293b;
+      border: 1px solid #334155;
+      color: #38bdf8;
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .content {
+      max-width: 900px;
+      margin: auto;
+      padding: 0 20px 70px;
+    }
+
+    .content section {
+      margin-bottom: 45px;
+    }
+
+    .content h2 {
+      color: white;
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+
+    .content h3 {
+      color: #38bdf8;
+      margin-top: 25px;
+    }
+
+    .content p,
+    .content li {
+      color: #cbd5e1;
+    }
+
+    .content ul {
+      padding-left: 25px;
+    }
+
+    .formula {
+      background: #1e293b;
+      border-left: 4px solid #38bdf8;
+      padding: 18px;
+      margin: 20px 0;
+      color: #f8fafc;
+      border-radius: 5px;
+    }
+
+    .faq {
+      border-top: 1px solid #334155;
+      padding: 18px 0;
+    }
+
+    .faq strong {
+      display: block;
+      color: white;
+      margin-bottom: 7px;
+    }
+
+    footer {
+      background: #020617;
+      text-align: center;
+      padding: 30px 20px;
+      color: #64748b;
+      font-size: 14px;
+    }
+
+    footer a {
+      color: #38bdf8;
+      text-decoration: none;
+    }
+
+    @media (max-width: 650px) {
+      nav {
+        flex-direction: column;
+      }
+
+      .tool-box {
+        margin-left: 15px;
+        margin-right: 15px;
+        padding: 20px;
+      }
+
+      .inputs {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <nav>
+    <a class="logo" href="../">CreatorKit</a>
+    <a href="../">← Back to CreatorKit</a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="hero">
+    <h1>Free Percentage Calculator</h1>
+
+    <p>
+      Calculate percentages, percentage changes, increases and decreases
+      quickly with this free online calculator.
+    </p>
+  </section>
+
+  <section class="tool-box">
+
+    <!-- Calculator 1 -->
+
+    <div class="calculator">
+
+      <h2>What is X% of Y?</h2>
+
+      <p>
+        Find a percentage of a number.
+      </p>
+
+      <div class="inputs">
+
+        <div>
+          <label for="percent1">Percentage (%)</label>
+
+          <input
+            type="number"
+            id="percent1"
+            placeholder="Example: 20"
+          >
+        </div>
+
+        <div>
+          <label for="number1">Number</label>
+
+          <input
+            type="number"
+            id="number1"
+            placeholder="Example: 500"
+          >
+        </div>
+
+      </div>
+
+      <button onclick="calculatePercentOf()">
+        Calculate
+      </button>
+
+      <div class="result" id="result1"></div>
+
+    </div>
+
+
+    <!-- Calculator 2 -->
+
+    <div class="calculator">
+
+      <h2>X is what percentage of Y?</h2>
+
+      <p>
+        Find what percentage one number represents of another.
+      </p>
+
+      <div class="inputs">
+
+        <div>
+          <label for="number2">Number X</label>
+
+          <input
+            type="number"
+            id="number2"
+            placeholder="Example: 25"
+          >
+        </div>
+
+        <div>
+          <label for="number3">Number Y</label>
+
+          <input
+            type="number"
+            id="number3"
+            placeholder="Example: 100"
+          >
+        </div>
+
+      </div>
+
+      <button onclick="calculateWhatPercent()">
+        Calculate
+      </button>
+
+      <div class="result" id="result2"></div>
+
+    </div>
+
+
+    <!-- Calculator 3 -->
+
+    <div class="calculator">
+
+      <h2>Percentage Increase or Decrease</h2>
+
+      <p>
+        Calculate the percentage change between an original and new value.
+      </p>
+
+      <div class="inputs">
+
+        <div>
+          <label for="original">Original Value</label>
+
+          <input
+            type="number"
+            id="original"
+            placeholder="Example: 100"
+          >
+        </div>
+
+        <div>
+          <label for="newValue">New Value</label>
+
+          <input
+            type="number"
+            id="newValue"
+            placeholder="Example: 125"
+          >
+        </div>
+
+      </div>
+
+      <button onclick="calculateChange()">
+        Calculate
+      </button>
+
+      <div class="result" id="result3"></div>
+
+    </div>
+
+  </section>
+
+
+  <section class="content">
+
+    <section>
+
+      <h2>What is a Percentage?</h2>
+
+      <p>
+        A percentage is a way of expressing a number as a fraction of 100.
+        The word percentage literally refers to a value "per hundred."
+      </p>
+
+      <p>
+        Percentages are commonly used for discounts, statistics, grades,
+        financial calculations, growth rates and many other everyday
+        calculations.
+      </p>
+
+    </section>
+
+
+    <section>
+
+      <h2>Percentage Formulas</h2>
+
+      <div class="formula">
+        Percentage of a number = (Percentage ÷ 100) × Number
+      </div>
+
+      <div class="formula">
+        What percentage = (Part ÷ Whole) × 100
+      </div>
+
+      <div class="formula">
+        Percentage change = ((New − Original) ÷ Original) × 100
+      </div>
+
+    </section>
+
+
+    <section>
+
+      <h2>Examples</h2>
+
+      <h3>What is 20% of 500?</h3>
+
+      <p>
+        20 ÷ 100 × 500 = 100
+      </p>
+
+      <h3>25 is what percentage of 100?</h3>
+
+      <p>
+        25 ÷ 100 × 100 = 25%
+      </p>
+
+      <h3>What is the percentage increase from 100 to 125?</h3>
+
+      <p>
+        ((125 − 100) ÷ 100) × 100 = 25%
+      </p>
+
+    </section>
+
+
+    <section>
+
+      <h2>Common Uses for a Percentage Calculator</h2>
+
+      <ul>
+        <li>Calculate discounts.</li>
+        <li>Calculate exam or test percentages.</li>
+        <li>Calculate percentage increases.</li>
+        <li>Calculate percentage decreases.</li>
+        <li>Compare two values.</li>
+        <li>Calculate statistics and proportions.</li>
+        <li>Check changes in prices or quantities.</li>
+      </ul>
+
+    </section>
+
+
+    <section>
+
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq">
+
+        <strong>
+          Is this Percentage Calculator free?
+        </strong>
+
+        <p>
+          Yes. CreatorKit's Percentage Calculator is free to use.
+        </p>
+
+      </div>
+
+      <div class="faq">
+
+        <strong>
+          How do I calculate a percentage of a number?
+        </strong>
+
+        <p>
+          Divide the percentage by 100 and multiply it by the number.
+        </p>
+
+      </div>
+
+      <div class="faq">
+
+        <strong>
+          How do I calculate percentage increase?
+        </strong>
+
+        <p>
+          Subtract the original value from the new value, divide the result
+          by the original value and multiply by 100.
+        </p>
+
+      </div>
+
+      <div class="faq">
+
+        <strong>
+          Can I calculate percentage decrease?
+        </strong>
+
+        <p>
+          Yes. Enter the original and new values in the percentage change
+          calculator. A negative result represents a decrease.
+        </p>
+
+      </div>
+
+      <div class="faq">
+
+        <strong>
+          Does this calculator work on mobile?
+        </strong>
+
+        <p>
+          Yes. The calculator is designed to work on phones, tablets and
+          desktop browsers.
+        </p>
+
+      </div>
+
+    </section>
+
+  </section>
+
+</main>
+
+<footer>
+
+  <p>
+    © 2026 CreatorKit. Free creator tools for YouTubers and content creators.
+  </p>
+
+  <p>
+    <a href="../">CreatorKit Home</a>
+  </p>
+
+</footer>
+
+
+<script>
+
+function getNumber(id) {
+  return Number(document.getElementById(id).value);
+}
+
+
+function showResult(id, text) {
+  const result = document.getElementById(id);
+
+  result.textContent = text;
+  result.style.display = "block";
+}
+
+
+function calculatePercentOf() {
+
+  const percentage = getNumber("percent1");
+  const number = getNumber("number1");
+
+  if (
+    !Number.isFinite(percentage) ||
+    !Number.isFinite(number) ||
+    document.getElementById("percent1").value === "" ||
+    document.getElementById("number1").value === ""
+  ) {
+    alert("Please enter both values.");
+    return;
+  }
+
+  const answer = (percentage / 100) * number;
+
+  showResult(
+    "result1",
+    percentage + "% of " + number + " = " + answer
+  );
+}
+
+
+function calculateWhatPercent() {
+
+  const x = getNumber("number2");
+  const y = getNumber("number3");
+
+  if (
+    document.getElementById("number2").value === "" ||
+    document.getElementById("number3").value === ""
+  ) {
+    alert("Please enter both values.");
+    return;
+  }
+
+  if (y === 0) {
+    alert("The second number cannot be zero.");
+    return;
+  }
+
+  const answer = (x / y) * 100;
+
+  showResult(
+    "result2",
+    x + " is " + answer.toFixed(2) + "% of " + y
+  );
+}
+
+
+function calculateChange() {
+
+  const original = getNumber("original");
+  const newValue = getNumber("newValue");
+
+  if (
+    document.getElementById("original").value === "" ||
+    document.getElementById("newValue").value === ""
+  ) {
+    alert("Please enter both values.");
+    return;
+  }
+
+  if (original === 0) {
+    alert("The original value cannot be zero.");
+    return;
+  }
+
+  const change =
+    ((newValue - original) / original) * 100;
+
+  if (change > 0) {
+
+    showResult(
+      "result3",
+      "Percentage increase: " + change.toFixed(2) + "%"
+    );
+
+  } else if (change < 0) {
+
+    showResult(
+      "result3",
+      "Percentage decrease: " + Math.abs(change).toFixed(2) + "%"
+    );
+
+  } else {
+
+    showResult(
+      "result3",
+      "No percentage change: 0%"
+    );
+  }
+}
+
+</script>
+
+</body>
+</html>
