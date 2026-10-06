@@ -1,847 +1,401 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
 
-<title>CreatorKit — Free Tools for Creators</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description"
-content="Free creator tools for YouTubers, gamers and content creators. Generate video ideas, titles, hashtags, resize images and more.">
+  <title>CreatorKit — Free Online Tools for YouTubers & Creators</title>
 
-<meta name="keywords"
-content="YouTube tools, creator tools, thumbnail resizer, gaming name generator, YouTube title generator">
+  <meta name="description" content="CreatorKit provides free online tools for YouTubers, gamers and content creators. Generate YouTube titles, video ideas, hashtags, gaming names, descriptions and more.">
 
-<style>
+  <meta name="keywords" content="free creator tools, YouTube tools, YouTube title generator, gaming name generator, video idea generator, hashtag generator, image compressor, image resizer">
 
-/* =========================
-   RESET
-========================= */
+  <meta name="author" content="CreatorKit">
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+  <meta name="robots" content="index, follow">
 
-html {
-    scroll-behavior: smooth;
-}
+  <link rel="canonical" href="https://chethanthegamester.github.io/CreatorKit/">
 
-body {
-    font-family:
-        Inter,
-        Arial,
-        Helvetica,
-        sans-serif;
+  <meta property="og:title" content="CreatorKit — Free Tools for Creators">
+  <meta property="og:description" content="Free tools for YouTubers, gamers and content creators.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://chethanthegamester.github.io/CreatorKit/">
 
-    background:
-        radial-gradient(
-            circle at top,
-            #17122d 0%,
-            #090b14 45%,
-            #06070d 100%
-        );
+  <style>
 
-    color: #ffffff;
-    min-height: 100vh;
-}
-
-button,
-input,
-textarea,
-select {
-    font-family: inherit;
-}
-
-button {
-    cursor: pointer;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-/* =========================
-   NAVBAR
-========================= */
-
-.navbar {
-    height: 72px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    padding: 0 6%;
-
-    border-bottom: 1px solid #22263a;
-
-    background: rgba(7, 9, 16, 0.85);
-
-    backdrop-filter: blur(15px);
-
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-.logo {
-    font-size: 24px;
-    font-weight: 900;
-    letter-spacing: -1px;
-}
-
-.logo span {
-    color: #8b6cff;
-}
-
-.nav-links {
-    display: flex;
-    gap: 24px;
-    align-items: center;
-}
-
-.nav-links a {
-    color: #aeb5c8;
-    font-size: 14px;
-    transition: 0.2s;
-}
-
-.nav-links a:hover {
-    color: white;
-}
-
-.nav-button {
-    background: #7c5cff;
-    color: white !important;
-
-    padding: 10px 17px;
-
-    border-radius: 9px;
-
-    font-weight: 700;
-}
-
-/* =========================
-   HERO
-========================= */
-
-.hero {
-    text-align: center;
-
-    padding:
-        100px
-        20px
-        70px;
-}
-
-.badge {
-    display: inline-block;
-
-    padding: 8px 14px;
-
-    border-radius: 50px;
-
-    border: 1px solid #403575;
-
-    background: #151127;
-
-    color: #bcaeff;
-
-    font-size: 13px;
-
-    font-weight: 700;
-}
-
-.hero h1 {
-    max-width: 850px;
-
-    margin: 22px auto;
-
-    font-size:
-        clamp(
-            44px,
-            8vw,
-            82px
-        );
-
-    line-height: 0.98;
-
-    letter-spacing: -4px;
-
-    background:
-        linear-gradient(
-            90deg,
-            #ffffff,
-            #a99aff
-        );
-
-    -webkit-background-clip: text;
-    background-clip: text;
-
-    color: transparent;
-}
-
-.hero p {
-    max-width: 680px;
-
-    margin: auto;
-
-    color: #aeb6cb;
-
-    font-size: 18px;
-
-    line-height: 1.7;
-}
-
-.hero-buttons {
-    margin-top: 30px;
-
-    display: flex;
-
-    justify-content: center;
-
-    gap: 12px;
-
-    flex-wrap: wrap;
-}
-
-.primary-button {
-    background: #7c5cff;
-
-    color: white;
-
-    border: none;
-
-    padding: 14px 22px;
-
-    border-radius: 10px;
-
-    font-weight: 800;
-
-    font-size: 15px;
-
-    transition: 0.2s;
-}
-
-.primary-button:hover {
-    transform: translateY(-2px);
-
-    background: #8c70ff;
-}
-
-.secondary-button {
-    background: #111625;
-
-    color: white;
-
-    border: 1px solid #303951;
-
-    padding: 14px 22px;
-
-    border-radius: 10px;
-
-    font-weight: 700;
-
-    font-size: 15px;
-}
-
-/* =========================
-   CONTAINER
-========================= */
-
-.container {
-    max-width: 1150px;
-
-    margin: auto;
-
-    padding:
-        0 20px
-        70px;
-}
-
-/* =========================
-   SECTION HEADER
-========================= */
-
-.section-header {
-    text-align: center;
-
-    margin-bottom: 30px;
-}
-
-.section-header h2 {
-    font-size: 32px;
-
-    margin-bottom: 8px;
-}
-
-.section-header p {
-    color: #8f98ad;
-}
-
-/* =========================
-   TOOLS GRID
-========================= */
-
-.tools-grid {
-    display: grid;
-
-    grid-template-columns:
-        repeat(
-            3,
-            1fr
-        );
-
-    gap: 18px;
-}
-
-.tool-card {
-    background:
-        linear-gradient(
-            145deg,
-            #121728,
-            #0e1321
-        );
-
-    border:
-        1px solid #252d43;
-
-    border-radius: 17px;
-
-    padding: 23px;
-
-    transition:
-        transform 0.2s,
-        border-color 0.2s;
-
-    display: flex;
-
-    flex-direction: column;
-}
-
-.tool-card:hover {
-    transform: translateY(-5px);
-
-    border-color: #51467d;
-}
-
-.tool-icon {
-    font-size: 34px;
-
-    margin-bottom: 13px;
-}
-
-.tool-card h3 {
-    font-size: 19px;
-
-    margin-bottom: 8px;
-}
-
-.tool-card p {
-    color: #929bb0;
-
-    font-size: 14px;
-
-    line-height: 1.55;
-
-    margin-bottom: 20px;
-
-    flex: 1;
-}
-
-.tool-open {
-    width: 100%;
-
-    background: #191f31;
-
-    border:
-        1px solid #303950;
-
-    color: white;
-
-    padding: 11px;
-
-    border-radius: 9px;
-
-    font-weight: 700;
-
-    transition: 0.2s;
-}
-
-.tool-open:hover {
-    background: #7c5cff;
-
-    border-color: #7c5cff;
-}
-
-/* =========================
-   TOOL PANELS
-========================= */
-
-.tool-panel {
-    display: none;
-
-    margin-top: 35px;
-
-    background: #101625;
-
-    border:
-        1px solid #2a3349;
-
-    border-radius: 18px;
-
-    padding: 28px;
-
-    animation:
-        fadeIn 0.25s ease;
-}
-
-.tool-panel.active {
-    display: block;
-}
-
-@keyframes fadeIn {
-
-    from {
-        opacity: 0;
-        transform: translateY(5px);
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    html {
+      scroll-behavior: smooth;
     }
 
-}
-
-.tool-panel h2 {
-    margin-bottom: 18px;
-}
-
-.tool-description {
-    color: #929bb0;
-
-    margin-bottom: 20px;
-}
-
-/* =========================
-   FORM ELEMENTS
-========================= */
-
-.form-row {
-    display: flex;
-
-    gap: 10px;
-
-    flex-wrap: wrap;
-}
-
-input,
-textarea,
-select {
-    background: #080b14;
-
-    color: white;
-
-    border:
-        1px solid #303951;
-
-    border-radius: 9px;
-
-    padding: 13px;
-
-    outline: none;
-
-    width: 100%;
-}
-
-.form-row input,
-.form-row select {
-    flex: 1;
-
-    min-width: 180px;
-}
-
-input:focus,
-textarea:focus,
-select:focus {
-    border-color: #7c5cff;
-}
-
-.action-button {
-    background: #7c5cff;
-
-    color: white;
-
-    border: none;
-
-    padding: 13px 18px;
-
-    border-radius: 9px;
-
-    font-weight: 800;
-}
-
-.copy-button {
-    background: #171d2d;
-
-    color: white;
-
-    border:
-        1px solid #303951;
-
-    padding: 11px 16px;
-
-    border-radius: 9px;
-
-    font-weight: 700;
-
-    margin-top: 12px;
-}
-
-/* =========================
-   RESULTS
-========================= */
-
-.results {
-    margin-top: 20px;
-}
-
-.result-item {
-    background: #0b101c;
-
-    border:
-        1px solid #29334a;
-
-    border-radius: 10px;
-
-    padding: 14px;
-
-    margin-bottom: 9px;
-
-    line-height: 1.5;
-}
-
-.success {
-    color: #77e7a3;
-
-    margin-top: 12px;
-}
-
-.empty {
-    color: #7f889d;
-}
-
-/* =========================
-   IMAGE TOOL
-========================= */
-
-.upload-box {
-    border:
-        2px dashed #39445e;
-
-    border-radius: 14px;
-
-    padding: 35px;
-
-    text-align: center;
-
-    color: #9aa4ba;
-
-    cursor: pointer;
-
-    transition: 0.2s;
-}
-
-.upload-box:hover {
-    border-color: #7c5cff;
-
-    background: #111527;
-}
-
-.upload-box input {
-    display: none;
-}
-
-.preview {
-    max-width: 100%;
-
-    max-height: 350px;
-
-    display: block;
-
-    margin: 20px auto;
-
-    border-radius: 10px;
-}
-
-/* =========================
-   MONEY SECTION
-========================= */
-
-.money-section {
-    margin-top: 80px;
-
-    padding: 35px;
-
-    border-radius: 20px;
-
-    border:
-        1px solid #3c326a;
-
-    background:
-        linear-gradient(
-            135deg,
-            #17132d,
-            #101827
-        );
-}
-
-.money-section h2 {
-    margin-bottom: 12px;
-}
-
-.money-section p {
-    color: #aab2c5;
-
-    line-height: 1.7;
-}
-
-.money-list {
-    margin:
-        20px 0
-        0 20px;
-
-    color: #c4ccdc;
-
-    line-height: 2;
-}
-
-/* =========================
-   STATS
-========================= */
-
-.stats {
-    display: grid;
-
-    grid-template-columns:
-        repeat(
-            3,
-            1fr
-        );
-
-    gap: 15px;
-
-    margin-top: 50px;
-}
-
-.stat {
-    background: #0f1421;
-
-    border:
-        1px solid #242d42;
-
-    border-radius: 14px;
-
-    text-align: center;
-
-    padding: 22px;
-}
-
-.stat strong {
-    display: block;
-
-    font-size: 27px;
-
-    margin-bottom: 5px;
-}
-
-.stat span {
-    color: #8992a8;
-
-    font-size: 13px;
-}
-
-/* =========================
-   FOOTER
-========================= */
-
-footer {
-    border-top:
-        1px solid #202638;
-
-    padding:
-        35px 20px;
-
-    text-align: center;
-
-    color: #737d92;
-
-    font-size: 13px;
-}
-
-.footer-logo {
-    color: white;
-
-    font-size: 18px;
-
-    font-weight: 900;
-
-    margin-bottom: 8px;
-}
-
-/* =========================
-   MOBILE
-========================= */
-
-@media(max-width: 850px) {
-
-    .tools-grid {
-        grid-template-columns:
-            repeat(
-                2,
-                1fr
-            );
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #080b14;
+      color: #f5f7ff;
+      line-height: 1.6;
     }
 
-}
-
-@media(max-width: 600px) {
-
-    .navbar {
-        padding: 0 18px;
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
-    .nav-links a:not(.nav-button) {
-        display: none;
+    .container {
+      width: 92%;
+      max-width: 1150px;
+      margin: auto;
     }
+
+    /* NAVBAR */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(8,11,20,0.95);
+      border-bottom: 1px solid #20263a;
+      backdrop-filter: blur(10px);
+    }
+
+    .nav-inner {
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: 800;
+      color: white;
+    }
+
+    .logo span {
+      color: #6d8cff;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: #b8c0d5;
+      font-size: 15px;
+    }
+
+    .nav-links a:hover {
+      color: white;
+    }
+
+    /* HERO */
 
     .hero {
-        padding-top: 70px;
+      text-align: center;
+      padding: 90px 20px 75px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 7px 14px;
+      border: 1px solid #303a5a;
+      background: #11172a;
+      border-radius: 50px;
+      color: #9fb0ff;
+      font-size: 14px;
+      margin-bottom: 20px;
     }
 
     .hero h1 {
-        letter-spacing: -2px;
+      font-size: clamp(42px, 7vw, 72px);
+      line-height: 1.05;
+      margin-bottom: 20px;
     }
+
+    .hero h1 span {
+      color: #718cff;
+    }
+
+    .hero p {
+      max-width: 720px;
+      margin: auto;
+      color: #aab3ca;
+      font-size: 18px;
+    }
+
+    .hero-buttons {
+      margin-top: 30px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 13px 20px;
+      border-radius: 10px;
+      font-weight: bold;
+      margin: 5px;
+      border: 1px solid #303a5a;
+    }
+
+    .primary {
+      background: #607cff;
+      color: white;
+      border-color: #607cff;
+    }
+
+    .secondary {
+      background: #11172a;
+      color: white;
+    }
+
+    /* SECTION */
+
+    section {
+      padding: 65px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .section-title h2 {
+      font-size: 34px;
+      margin-bottom: 8px;
+    }
+
+    .section-title p {
+      color: #929bb2;
+    }
+
+    /* TOOLS */
 
     .tools-grid {
-        grid-template-columns: 1fr;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
+      gap: 18px;
     }
 
-    .stats {
-        grid-template-columns: 1fr;
+    .tool-card {
+      background: #101523;
+      border: 1px solid #202940;
+      border-radius: 16px;
+      padding: 23px;
+      transition: 0.2s;
     }
 
-    .tool-panel {
-        padding: 20px;
+    .tool-card:hover {
+      transform: translateY(-4px);
+      border-color: #5267a8;
     }
 
-}
+    .tool-icon {
+      font-size: 30px;
+      margin-bottom: 12px;
+    }
 
-</style>
+    .tool-card h3 {
+      font-size: 19px;
+      margin-bottom: 8px;
+    }
+
+    .tool-card p {
+      color: #9da7bd;
+      font-size: 14px;
+      min-height: 65px;
+    }
+
+    .tool-link {
+      display: inline-block;
+      margin-top: 15px;
+      color: #8298ff;
+      font-weight: bold;
+    }
+
+    /* FEATURE SECTION */
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 18px;
+    }
+
+    .feature {
+      padding: 25px;
+      background: #101523;
+      border: 1px solid #202940;
+      border-radius: 15px;
+    }
+
+    .feature h3 {
+      margin-bottom: 8px;
+    }
+
+    .feature p {
+      color: #9da7bd;
+    }
+
+    /* FAQ */
+
+    .faq {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    details {
+      background: #101523;
+      border: 1px solid #202940;
+      border-radius: 12px;
+      padding: 18px;
+      margin-bottom: 12px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    details p {
+      margin-top: 12px;
+      color: #9da7bd;
+    }
+
+    /* CTA */
+
+    .cta {
+      text-align: center;
+      background: #101523;
+      border: 1px solid #202940;
+      border-radius: 20px;
+      padding: 50px 25px;
+    }
+
+    .cta h2 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .cta p {
+      color: #9da7bd;
+      margin-bottom: 20px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid #20263a;
+      margin-top: 40px;
+      padding: 35px 0;
+      color: #7f899f;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 650px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 65px;
+      }
+
+      .hero h1 {
+        font-size: 43px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+    }
+
+  </style>
 </head>
-
 
 <body>
 
+<!-- NAVIGATION -->
 
-<!-- =========================
-     NAVIGATION
-========================= -->
+<nav>
 
-<nav class="navbar">
+  <div class="container nav-inner">
 
-    <div class="logo">
-        Creator<span>Kit</span>
-    </div>
+    <a href="#" class="logo">
+      Creator<span>Kit</span>
+    </a>
 
     <div class="nav-links">
-
-        <a href="#tools">
-            Tools
-        </a>
-
-        <a href="#about">
-            About
-        </a>
-
-        <a
-        href="#tools"
-        class="nav-button">
-
-            Start Creating
-
-        </a>
-
+      <a href="#tools">Tools</a>
+      <a href="#features">Why CreatorKit?</a>
+      <a href="#faq">FAQ</a>
     </div>
+
+  </div>
 
 </nav>
 
 
-<!-- =========================
-     HERO
-========================= -->
+<!-- HERO -->
 
-<section class="hero">
+<header class="hero">
 
-    <div class="badge">
-        🚀 Free tools for creators
+  <div class="container">
+
+    <div class="hero-badge">
+      🚀 Free tools for creators
     </div>
 
     <h1>
-        Create better.<br>
-        Create faster.
+      Create faster with<br>
+      <span>CreatorKit</span>
     </h1>
 
     <p>
-        CreatorKit gives YouTubers, gamers and content creators
-        simple tools to create content faster — completely free.
+      Free online tools for YouTubers, gamers and content creators.
+      Generate ideas, titles, hashtags, gaming names and more —
+      without expensive software.
     </p>
 
     <div class="hero-buttons">
 
-        <a
-        href="#tools"
-        class="primary-button">
+      <a href="#tools" class="button primary">
+        Explore Free Tools
+      </a>
 
-            Explore Tools
-
-        </a>
-
-        <a
-        href="#about"
-        class="secondary-button">
-
-            How it works
-
-        </a>
+      <a href="#faq" class="button secondary">
+        Learn More
+      </a>
 
     </div>
 
-</section>
+  </div>
+
+</header>
 
 
-<div class="container">
-
-
-<!-- =========================
-     TOOLS
-========================= -->
+<!-- TOOLS -->
 
 <section id="tools">
 
-    <div class="section-header">
+  <div class="container">
 
-        <h2>
-            Free Creator Tools
-        </h2>
+    <div class="section-title">
 
-        <p>
-            Everything you need to get started.
-        </p>
+      <h2>Free Creator Tools</h2>
+
+      <p>
+        Simple tools to help you create content faster.
+      </p>
 
     </div>
 
@@ -849,1950 +403,474 @@ footer {
     <div class="tools-grid">
 
 
-        <!-- TOOL 1 -->
+      <!-- IMAGE RESIZER -->
 
-        <div class="tool-card">
+      <a href="#image-resizer" class="tool-card">
 
-            <div class="tool-icon">
-                🖼️
-            </div>
+        <div class="tool-icon">🖼️</div>
 
-            <h3>
-                Image Resizer
-            </h3>
+        <h3>Image Resizer</h3>
 
-            <p>
-                Resize images to any width and height directly
-                in your browser.
-            </p>
+        <p>
+          Resize images to the dimensions you need for thumbnails,
+          social media and websites.
+        </p>
 
-            <button
-            class="tool-open"
-            onclick="openTool('imageTool')">
+        <span class="tool-link">
+          Open Tool →
+        </span>
 
-                Open Tool
+      </a>
 
-            </button>
 
-        </div>
+      <!-- IMAGE COMPRESSOR -->
 
+      <a href="#image-compressor" class="tool-card">
 
-        <!-- TOOL 2 -->
+        <div class="tool-icon">📦</div>
 
-        <div class="tool-card">
+        <h3>Image Compressor</h3>
 
-            <div class="tool-icon">
-                🗜️
-            </div>
+        <p>
+          Reduce image file size while keeping your images useful
+          for websites and social media.
+        </p>
 
-            <h3>
-                Image Compressor
-            </h3>
+        <span class="tool-link">
+          Open Tool →
+        </span>
 
-            <p>
-                Reduce image file size before uploading to
-                YouTube or social media.
-            </p>
+      </a>
 
-            <button
-            class="tool-open"
-            onclick="openTool('compressTool')">
 
-                Open Tool
+      <!-- TITLE -->
 
-            </button>
+      <a href="#youtube-title-generator" class="tool-card">
 
-        </div>
+        <div class="tool-icon">🎬</div>
 
+        <h3>YouTube Title Generator</h3>
 
-        <!-- TOOL 3 -->
+        <p>
+          Generate catchy YouTube title ideas for gaming,
+          tutorials, Shorts and more.
+        </p>
 
-        <div class="tool-card">
+        <span class="tool-link">
+          Open Tool →
+        </span>
 
-            <div class="tool-icon">
-                🎯
-            </div>
+      </a>
 
-            <h3>
-                YouTube Titles
-            </h3>
 
-            <p>
-                Generate catchy title ideas for your next video.
-            </p>
+      <!-- VIDEO IDEAS -->
 
-            <button
-            class="tool-open"
-            onclick="openTool('titleTool')">
+      <a href="#video-idea-generator" class="tool-card">
 
-                Open Tool
+        <div class="tool-icon">💡</div>
 
-            </button>
+        <h3>Video Idea Generator</h3>
 
-        </div>
+        <p>
+          Never run out of content ideas. Generate ideas for
+          YouTube videos, gaming and Shorts.
+        </p>
 
+        <span class="tool-link">
+          Open Tool →
+        </span>
 
-        <!-- TOOL 4 -->
+      </a>
 
-        <div class="tool-card">
 
-            <div class="tool-icon">
-                💡
-            </div>
+      <!-- HASHTAGS -->
 
-            <h3>
-                Video Ideas
-            </h3>
+      <a href="#hashtag-generator" class="tool-card">
 
-            <p>
-                Generate content ideas based on your niche.
-            </p>
+        <div class="tool-icon">#️⃣</div>
 
-            <button
-            class="tool-open"
-            onclick="openTool('ideaTool')">
+        <h3>Hashtag Generator</h3>
 
-                Open Tool
+        <p>
+          Generate useful hashtag ideas for YouTube,
+          Instagram, TikTok and social media.
+        </p>
 
-            </button>
+        <span class="tool-link">
+          Open Tool →
+        </span>
 
-        </div>
+      </a>
 
 
-        <!-- TOOL 5 -->
+      <!-- GAMING NAME -->
 
-        <div class="tool-card">
+      <a href="#gaming-name-generator" class="tool-card">
 
-            <div class="tool-icon">
-                #️⃣
-            </div>
+        <div class="tool-icon">🎮</div>
 
-            <h3>
-                Hashtag Generator
-            </h3>
+        <h3>Gaming Name Generator</h3>
 
-            <p>
-                Generate useful hashtags for your videos and posts.
-            </p>
+        <p>
+          Create unique gaming names for YouTube,
+          Roblox, gaming profiles and more.
+        </p>
 
-            <button
-            class="tool-open"
-            onclick="openTool('hashtagTool')">
+        <span class="tool-link">
+          Open Tool →
+        </span>
 
-                Open Tool
+      </a>
 
-            </button>
 
-        </div>
+      <!-- DESCRIPTION -->
 
+      <a href="#youtube-description-generator" class="tool-card">
 
-        <!-- TOOL 6 -->
+        <div class="tool-icon">📝</div>
 
-        <div class="tool-card">
+        <h3>YouTube Description Generator</h3>
 
-            <div class="tool-icon">
-                🎮
-            </div>
+        <p>
+          Create a starting point for your YouTube video
+          descriptions in seconds.
+        </p>
 
-            <h3>
-                Gaming Name Generator
-            </h3>
+        <span class="tool-link">
+          Open Tool →
+        </span>
 
-            <p>
-                Create unique gaming and YouTube channel names.
-            </p>
+      </a>
 
-            <button
-            class="tool-open"
-            onclick="openTool('gamingTool')">
 
-                Open Tool
+      <!-- TEXT CASE -->
 
-            </button>
+      <a href="#text-case-converter" class="tool-card">
 
-        </div>
+        <div class="tool-icon">🔤</div>
 
+        <h3>Text Case Converter</h3>
 
-        <!-- TOOL 7 -->
+        <p>
+          Quickly convert text to uppercase, lowercase
+          and title case.
+        </p>
 
-        <div class="tool-card">
+        <span class="tool-link">
+          Open Tool →
+        </span>
 
-            <div class="tool-icon">
-                ✍️
-            </div>
+      </a>
 
-            <h3>
-                Description Generator
-            </h3>
 
-            <p>
-                Generate a clean description for your YouTube videos.
-            </p>
+      <!-- PERCENTAGE -->
 
-            <button
-            class="tool-open"
-            onclick="openTool('descriptionTool')">
+      <a href="#percentage-calculator" class="tool-card">
 
-                Open Tool
+        <div class="tool-icon">🧮</div>
 
-            </button>
+        <h3>Percentage Calculator</h3>
 
-        </div>
+        <p>
+          Quickly calculate percentages for everyday
+          calculations and creator tasks.
+        </p>
 
+        <span class="tool-link">
+          Open Tool →
+        </span>
 
-        <!-- TOOL 8 -->
+      </a>
 
-        <div class="tool-card">
 
-            <div class="tool-icon">
-                🔠
-            </div>
+      <!-- COLOR -->
 
-            <h3>
-                Text Case Converter
-            </h3>
+      <a href="#color-generator" class="tool-card">
 
-            <p>
-                Convert text to uppercase, lowercase or title case.
-            </p>
+        <div class="tool-icon">🎨</div>
 
-            <button
-            class="tool-open"
-            onclick="openTool('textTool')">
+        <h3>Color Generator</h3>
 
-                Open Tool
+        <p>
+          Generate random colors and HEX codes for
+          thumbnails, websites and designs.
+        </p>
 
-            </button>
+        <span class="tool-link">
+          Open Tool →
+        </span>
 
-        </div>
-
-
-        <!-- TOOL 9 -->
-
-        <div class="tool-card">
-
-            <div class="tool-icon">
-                📊
-            </div>
-
-            <h3>
-                Percentage Calculator
-            </h3>
-
-            <p>
-                Quickly calculate percentages for any number.
-            </p>
-
-            <button
-            class="tool-open"
-            onclick="openTool('percentageTool')">
-
-                Open Tool
-
-            </button>
-
-        </div>
-
-
-        <!-- TOOL 10 -->
-
-        <div class="tool-card">
-
-            <div class="tool-icon">
-                🎨
-            </div>
-
-            <h3>
-                Color Generator
-            </h3>
-
-            <p>
-                Generate a random color and copy its HEX code.
-            </p>
-
-            <button
-            class="tool-open"
-            onclick="openTool('colorTool')">
-
-                Open Tool
-
-            </button>
-
-        </div>
-
+      </a>
 
     </div>
 
-
-<!-- =========================
-     IMAGE RESIZER
-========================= -->
-
-<div
-class="tool-panel"
-id="imageTool">
-
-    <h2>
-        🖼️ Image Resizer
-    </h2>
-
-    <p class="tool-description">
-        Resize an image to your desired dimensions.
-    </p>
-
-
-    <label class="upload-box">
-
-        Click to choose an image
-
-        <input
-        type="file"
-        id="imageInput"
-        accept="image/*">
-
-        <br><br>
-
-        JPG · PNG · WEBP
-
-    </label>
-
-
-    <img
-    id="imagePreview"
-    class="preview"
-    style="display:none;">
-
-
-    <div class="form-row">
-
-        <input
-        type="number"
-        id="imageWidth"
-        value="1280"
-        placeholder="Width">
-
-        <input
-        type="number"
-        id="imageHeight"
-        value="720"
-        placeholder="Height">
-
-        <button
-        class="action-button"
-        onclick="resizeImage()">
-
-            Download
-
-        </button>
-
-    </div>
-
-
-    <div
-    id="imageMessage"
-    class="results">
-    </div>
-
-</div>
-
-
-<!-- =========================
-     IMAGE COMPRESSOR
-========================= -->
-
-<div
-class="tool-panel"
-id="compressTool">
-
-    <h2>
-        🗜️ Image Compressor
-    </h2>
-
-    <p class="tool-description">
-        Compress your image and download a smaller version.
-    </p>
-
-
-    <label class="upload-box">
-
-        Choose an image
-
-        <input
-        type="file"
-        id="compressInput"
-        accept="image/*">
-
-        <br><br>
-
-        Your image stays in your browser.
-
-    </label>
-
-
-    <div class="form-row"
-    style="margin-top:20px;">
-
-        <select id="quality">
-
-            <option value="0.9">
-                High quality
-            </option>
-
-            <option value="0.7" selected>
-                Medium quality
-            </option>
-
-            <option value="0.5">
-                Small file
-            </option>
-
-        </select>
-
-        <button
-        class="action-button"
-        onclick="compressImage()">
-
-            Compress & Download
-
-        </button>
-
-    </div>
-
-    <div
-    id="compressMessage"
-    class="results">
-    </div>
-
-</div>
-
-
-<!-- =========================
-     TITLE GENERATOR
-========================= -->
-
-<div
-class="tool-panel"
-id="titleTool">
-
-    <h2>
-        🎯 YouTube Title Generator
-    </h2>
-
-    <p class="tool-description">
-        Enter your video topic and get title ideas.
-    </p>
-
-
-    <div class="form-row">
-
-        <input
-        id="titleTopic"
-        placeholder="Example: Roblox survival challenge">
-
-        <button
-        class="action-button"
-        onclick="generateTitles()">
-
-            Generate
-
-        </button>
-
-    </div>
-
-
-    <div
-    id="titleResults"
-    class="results">
-    </div>
-
-</div>
-
-
-<!-- =========================
-     VIDEO IDEAS
-========================= -->
-
-<div
-class="tool-panel"
-id="ideaTool">
-
-    <h2>
-        💡 Video Idea Generator
-    </h2>
-
-    <p class="tool-description">
-        Enter your niche to generate video concepts.
-    </p>
-
-
-    <div class="form-row">
-
-        <input
-        id="ideaTopic"
-        placeholder="Gaming, Minecraft, Roblox, technology...">
-
-        <button
-        class="action-button"
-        onclick="generateIdeas()">
-
-            Generate
-
-        </button>
-
-    </div>
-
-
-    <div
-    id="ideaResults"
-    class="results">
-    </div>
-
-</div>
-
-
-<!-- =========================
-     HASHTAG GENERATOR
-========================= -->
-
-<div
-class="tool-panel"
-id="hashtagTool">
-
-    <h2>
-        #️⃣ Hashtag Generator
-    </h2>
-
-    <p class="tool-description">
-        Generate hashtags for your content.
-    </p>
-
-
-    <div class="form-row">
-
-        <input
-        id="hashtagTopic"
-        placeholder="Example: Roblox gaming">
-
-        <button
-        class="action-button"
-        onclick="generateHashtags()">
-
-            Generate
-
-        </button>
-
-    </div>
-
-
-    <div
-    id="hashtagResults"
-    class="results">
-    </div>
-
-</div>
-
-
-<!-- =========================
-     GAMING NAME GENERATOR
-========================= -->
-
-<div
-class="tool-panel"
-id="gamingTool">
-
-    <h2>
-        🎮 Gaming Name Generator
-    </h2>
-
-    <p class="tool-description">
-        Create unique gaming names.
-    </p>
-
-
-    <div class="form-row">
-
-        <input
-        id="gamingWord"
-        placeholder="Example: Dragon">
-
-        <button
-        class="action-button"
-        onclick="generateGamingNames()">
-
-            Generate
-
-        </button>
-
-    </div>
-
-
-    <div
-    id="gamingResults"
-    class="results">
-    </div>
-
-</div>
-
-
-<!-- =========================
-     DESCRIPTION
-========================= -->
-
-<div
-class="tool-panel"
-id="descriptionTool">
-
-    <h2>
-        ✍️ Description Generator
-    </h2>
-
-    <p class="tool-description">
-        Generate a basic YouTube video description.
-    </p>
-
-
-    <div class="form-row">
-
-        <input
-        id="descriptionTopic"
-        placeholder="Example: Roblox challenge">
-
-        <button
-        class="action-button"
-        onclick="generateDescription()">
-
-            Generate
-
-        </button>
-
-    </div>
-
-
-    <textarea
-    id="descriptionResult"
-    rows="12"
-    style="margin-top:20px;">
-    </textarea>
-
-
-    <button
-    class="copy-button"
-    onclick="copyText('descriptionResult')">
-
-        Copy
-
-    </button>
-
-</div>
-
-
-<!-- =========================
-     TEXT CASE
-========================= -->
-
-<div
-class="tool-panel"
-id="textTool">
-
-    <h2>
-        🔠 Text Case Converter
-    </h2>
-
-
-    <textarea
-    id="caseInput"
-    rows="7"
-    placeholder="Type or paste your text here...">
-    </textarea>
-
-
-    <div class="form-row"
-    style="margin-top:12px;">
-
-        <button
-        class="action-button"
-        onclick="changeCase('upper')">
-
-            UPPERCASE
-
-        </button>
-
-        <button
-        class="action-button"
-        onclick="changeCase('lower')">
-
-            lowercase
-
-        </button>
-
-        <button
-        class="action-button"
-        onclick="changeCase('title')">
-
-            Title Case
-
-        </button>
-
-    </div>
-
-
-    <textarea
-    id="caseResult"
-    rows="7"
-    style="margin-top:15px;"
-    readonly>
-    </textarea>
-
-
-    <button
-    class="copy-button"
-    onclick="copyText('caseResult')">
-
-        Copy
-
-    </button>
-
-</div>
-
-
-<!-- =========================
-     PERCENTAGE
-========================= -->
-
-<div
-class="tool-panel"
-id="percentageTool">
-
-    <h2>
-        📊 Percentage Calculator
-    </h2>
-
-
-    <p class="tool-description">
-        What is X% of a number?
-    </p>
-
-
-    <div class="form-row">
-
-        <input
-        type="number"
-        id="percentage"
-        placeholder="Percentage">
-
-        <input
-        type="number"
-        id="number"
-        placeholder="Number">
-
-        <button
-        class="action-button"
-        onclick="calculatePercentage()">
-
-            Calculate
-
-        </button>
-
-    </div>
-
-
-    <div
-    id="percentageResult"
-    class="results">
-    </div>
-
-</div>
-
-
-<!-- =========================
-     COLOR GENERATOR
-========================= -->
-
-<div
-class="tool-panel"
-id="colorTool">
-
-    <h2>
-        🎨 Color Generator
-    </h2>
-
-    <p class="tool-description">
-        Generate a random HEX color.
-    </p>
-
-
-    <div
-    id="colorPreview"
-    style="
-        height:150px;
-        border-radius:14px;
-        background:#7c5cff;
-        margin-bottom:20px;
-    ">
-    </div>
-
-
-    <div class="form-row">
-
-        <input
-        id="colorCode"
-        value="#7C5CFF"
-        readonly>
-
-        <button
-        class="action-button"
-        onclick="generateColor()">
-
-            New Color
-
-        </button>
-
-        <button
-        class="copy-button"
-        onclick="copyText('colorCode')">
-
-            Copy
-
-        </button>
-
-    </div>
-
-</div>
-
+  </div>
 
 </section>
 
 
-<!-- =========================
-     STATS
-========================= -->
+<!-- WHY CREATOR KIT -->
 
-<div class="stats">
+<section id="features">
 
-    <div class="stat">
+  <div class="container">
 
-        <strong>
-            10+
-        </strong>
+    <div class="section-title">
 
-        <span>
-            Free tools
-        </span>
+      <h2>Why use CreatorKit?</h2>
+
+      <p>
+        Built to make everyday creator tasks easier.
+      </p>
 
     </div>
 
 
-    <div class="stat">
+    <div class="features">
 
-        <strong>
-            ₹0
-        </strong>
+      <div class="feature">
 
-        <span>
-            Required to use tools
-        </span>
+        <h3>🆓 Free</h3>
+
+        <p>
+          CreatorKit is designed around free,
+          easy-to-use creator tools.
+        </p>
+
+      </div>
+
+
+      <div class="feature">
+
+        <h3>⚡ Fast</h3>
+
+        <p>
+          Simple tools that help you get your
+          creator tasks done quickly.
+        </p>
+
+      </div>
+
+
+      <div class="feature">
+
+        <h3>🎮 Made for Creators</h3>
+
+        <p>
+          Useful for YouTubers, gamers, Shorts creators
+          and people building online content.
+        </p>
+
+      </div>
+
+
+      <div class="feature">
+
+        <h3>💻 Browser Based</h3>
+
+        <p>
+          Use CreatorKit directly from your browser
+          without installing complicated software.
+        </p>
+
+      </div>
 
     </div>
 
-
-    <div class="stat">
-
-        <strong>
-            100%
-        </strong>
-
-        <span>
-            Browser based
-        </span>
-
-    </div>
-
-</div>
-
-
-<!-- =========================
-     MONEY
-========================= -->
-
-<section
-class="money-section"
-id="about">
-
-    <h2>
-        💰 How This Website Can Make Money
-    </h2>
-
-    <p>
-        CreatorKit is free for visitors. The long-term goal is
-        to attract people who need creator tools and then
-        monetize the traffic legitimately.
-    </p>
-
-
-    <ul class="money-list">
-
-        <li>
-            Advertising from legitimate advertising networks
-        </li>
-
-        <li>
-            Relevant affiliate links
-        </li>
-
-        <li>
-            Premium tools and features
-        </li>
-
-        <li>
-            Sponsorships
-        </li>
-
-    </ul>
-
-
-    <p>
-
-        <strong>
-            Important:
-        </strong>
-
-        We do not ask visitors to deposit money,
-        promise guaranteed income, or use misleading
-        earning claims.
-
-    </p>
+  </div>
 
 </section>
 
 
-</div>
+<!-- SEO CONTENT -->
+
+<section>
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <h2>Free YouTube & Creator Tools</h2>
+
+    </div>
+
+    <div class="feature">
+
+      <p>
+        CreatorKit is a collection of free online tools designed
+        for content creators. Whether you make YouTube gaming
+        videos, Shorts, tutorials, social media posts or thumbnails,
+        CreatorKit can help with some of the repetitive tasks
+        involved in creating content.
+      </p>
+
+      <br>
+
+      <p>
+        Use the YouTube title generator to brainstorm titles,
+        the video idea generator when you need inspiration,
+        the hashtag generator for social posts, or the gaming
+        name generator when you need a new username.
+      </p>
+
+      <br>
+
+      <p>
+        CreatorKit is continuously being improved with new
+        creator-focused tools.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
 
 
-<!-- =========================
-     FOOTER
-========================= -->
+<!-- FAQ -->
+
+<section id="faq">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <h2>Frequently Asked Questions</h2>
+
+      <p>
+        Common questions about CreatorKit.
+      </p>
+
+    </div>
+
+
+    <div class="faq">
+
+
+      <details>
+
+        <summary>
+          Is CreatorKit free?
+        </summary>
+
+        <p>
+          Yes. CreatorKit is designed to provide free
+          online tools for creators.
+        </p>
+
+      </details>
+
+
+      <details>
+
+        <summary>
+          Do I need to install anything?
+        </summary>
+
+        <p>
+          No. CreatorKit tools are designed to work
+          directly in your web browser.
+        </p>
+
+      </details>
+
+
+      <details>
+
+        <summary>
+          Can CreatorKit help me grow on YouTube?
+        </summary>
+
+        <p>
+          CreatorKit can help with tasks such as generating
+          ideas and titles, but no tool can guarantee views,
+          subscribers or earnings. Your content quality,
+          consistency and audience are still important.
+        </p>
+
+      </details>
+
+
+      <details>
+
+        <summary>
+          Can CreatorKit make me money?
+        </summary>
+
+        <p>
+          CreatorKit itself does not guarantee income.
+          If the website receives enough visitors, legitimate
+          monetization options such as advertising, affiliate
+          partnerships or sponsorships may be considered.
+        </p>
+
+      </details>
+
+
+      <details>
+
+        <summary>
+          Is CreatorKit a scam?
+        </summary>
+
+        <p>
+          CreatorKit does not ask users to deposit money or
+          promise guaranteed earnings. The purpose of the
+          website is to provide useful creator tools.
+        </p>
+
+      </details>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section>
+
+  <div class="container">
+
+    <div class="cta">
+
+      <h2>Ready to create?</h2>
+
+      <p>
+        Try the free CreatorKit tools and get back to creating.
+      </p>
+
+      <a href="#tools" class="button primary">
+        Explore Tools
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FOOTER -->
 
 <footer>
 
-    <div class="footer-logo">
-        CreatorKit
-    </div>
+  <div class="container">
 
-    Free tools for creators.
+    <p>
+      © 2026 CreatorKit. Free tools for creators.
+    </p>
 
-    <br><br>
+    <p style="margin-top:8px;">
+      Built for YouTubers, gamers and content creators.
+    </p>
 
-    © 2026 CreatorKit
+  </div>
 
 </footer>
 
 
-<script>
-
-/* =========================
-   OPEN TOOL
-========================= */
-
-function openTool(id) {
-
-    const panels =
-        document.querySelectorAll(".tool-panel");
-
-    panels.forEach(function(panel) {
-
-        panel.classList.remove("active");
-
-    });
-
-
-    const selected =
-        document.getElementById(id);
-
-    selected.classList.add("active");
-
-
-    selected.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-    });
-
-}
-
-
-/* =========================
-   IMAGE RESIZER
-========================= */
-
-let resizeImageObject = null;
-
-
-document
-.getElementById("imageInput")
-.addEventListener(
-    "change",
-    function(event) {
-
-        const file =
-            event.target.files[0];
-
-        if (!file) return;
-
-
-        const reader =
-            new FileReader();
-
-
-        reader.onload =
-        function(e) {
-
-            resizeImageObject =
-                new Image();
-
-
-            resizeImageObject.onload =
-            function() {
-
-                const preview =
-                    document.getElementById(
-                        "imagePreview"
-                    );
-
-
-                preview.src =
-                    e.target.result;
-
-
-                preview.style.display =
-                    "block";
-
-
-                document.getElementById(
-                    "imageMessage"
-                ).innerHTML =
-
-                `<div class="result-item">
-                    Loaded:
-                    ${resizeImageObject.width}
-                    ×
-                    ${resizeImageObject.height}
-                    pixels
-                </div>`;
-
-            };
-
-
-            resizeImageObject.src =
-                e.target.result;
-
-        };
-
-
-        reader.readAsDataURL(file);
-
-    }
-);
-
-
-function resizeImage() {
-
-    if (!resizeImageObject) {
-
-        alert(
-            "Please choose an image first."
-        );
-
-        return;
-
-    }
-
-
-    const width =
-        parseInt(
-            document.getElementById(
-                "imageWidth"
-            ).value
-        );
-
-
-    const height =
-        parseInt(
-            document.getElementById(
-                "imageHeight"
-            ).value
-        );
-
-
-    if (!width || !height) {
-
-        alert(
-            "Enter width and height."
-        );
-
-        return;
-
-    }
-
-
-    const canvas =
-        document.createElement(
-            "canvas"
-        );
-
-
-    canvas.width =
-        width;
-
-    canvas.height =
-        height;
-
-
-    const context =
-        canvas.getContext("2d");
-
-
-    context.drawImage(
-        resizeImageObject,
-        0,
-        0,
-        width,
-        height
-    );
-
-
-    canvas.toBlob(
-        function(blob) {
-
-            const url =
-                URL.createObjectURL(
-                    blob
-                );
-
-
-            const link =
-                document.createElement(
-                    "a"
-                );
-
-
-            link.href =
-                url;
-
-
-            link.download =
-                "CreatorKit-resized.png";
-
-
-            link.click();
-
-
-            URL.revokeObjectURL(
-                url
-            );
-
-        },
-        "image/png"
-    );
-
-}
-
-
-/* =========================
-   IMAGE COMPRESSOR
-========================= */
-
-function compressImage() {
-
-    const input =
-        document.getElementById(
-            "compressInput"
-        );
-
-
-    const file =
-        input.files[0];
-
-
-    if (!file) {
-
-        alert(
-            "Choose an image first."
-        );
-
-        return;
-
-    }
-
-
-    const quality =
-        parseFloat(
-            document.getElementById(
-                "quality"
-            ).value
-        );
-
-
-    const reader =
-        new FileReader();
-
-
-    reader.onload =
-    function(e) {
-
-        const image =
-            new Image();
-
-
-        image.onload =
-        function() {
-
-            const canvas =
-                document.createElement(
-                    "canvas"
-                );
-
-
-            canvas.width =
-                image.width;
-
-            canvas.height =
-                image.height;
-
-
-            const ctx =
-                canvas.getContext(
-                    "2d"
-                );
-
-
-            ctx.drawImage(
-                image,
-                0,
-                0
-            );
-
-
-            canvas.toBlob(
-                function(blob) {
-
-                    const url =
-                        URL.createObjectURL(
-                            blob
-                        );
-
-
-                    const link =
-                        document.createElement(
-                            "a"
-                        );
-
-
-                    link.href =
-                        url;
-
-
-                    link.download =
-                        "CreatorKit-compressed.jpg";
-
-
-                    link.click();
-
-
-                    document.getElementById(
-                        "compressMessage"
-                    ).innerHTML =
-
-                    `<div class="result-item">
-                        Original:
-                        ${formatBytes(file.size)}
-                        <br>
-                        New:
-                        ${formatBytes(blob.size)}
-                    </div>`;
-
-
-                    URL.revokeObjectURL(
-                        url
-                    );
-
-                },
-                "image/jpeg",
-                quality
-            );
-
-        };
-
-
-        image.src =
-            e.target.result;
-
-    };
-
-
-    reader.readAsDataURL(file);
-
-}
-
-
-function formatBytes(bytes) {
-
-    if (bytes === 0)
-        return "0 Bytes";
-
-
-    const sizes = [
-        "Bytes",
-        "KB",
-        "MB",
-        "GB"
-    ];
-
-
-    const i =
-        Math.floor(
-            Math.log(bytes) /
-            Math.log(1024)
-        );
-
-
-    return (
-        parseFloat(
-            (
-                bytes /
-                Math.pow(
-                    1024,
-                    i
-                )
-            ).toFixed(2)
-        )
-        +
-        " "
-        +
-        sizes[i]
-    );
-
-}
-
-
-/* =========================
-   TITLE GENERATOR
-========================= */
-
-function generateTitles() {
-
-    const topic =
-        document
-        .getElementById(
-            "titleTopic"
-        )
-        .value
-        .trim();
-
-
-    if (!topic) {
-
-        alert(
-            "Enter a topic first."
-        );
-
-        return;
-
-    }
-
-
-    const titles = [
-
-        `I Tried ${topic}... Here's What Happened`,
-
-        `I Tested ${topic} So You Don't Have To`,
-
-        `The Truth About ${topic}`,
-
-        `I Spent 24 Hours Doing ${topic}`,
-
-        `Can I Actually Succeed at ${topic}?`,
-
-        `Nobody Expected This When I Tried ${topic}`,
-
-        `This Changed Everything About ${topic}`,
-
-        `I Can't Believe This Happened With ${topic}`,
-
-        `The Ultimate ${topic} Challenge`,
-
-        `Everything You Need to Know About ${topic}`
-
-    ];
-
-
-    showResults(
-        "titleResults",
-        titles
-    );
-
-}
-
-
-/* =========================
-   VIDEO IDEAS
-========================= */
-
-function generateIdeas() {
-
-    const topic =
-        document
-        .getElementById(
-            "ideaTopic"
-        )
-        .value
-        .trim();
-
-
-    if (!topic) {
-
-        alert(
-            "Enter a niche first."
-        );
-
-        return;
-
-    }
-
-
-    const ideas = [
-
-        `I Tried ${topic} for 24 Hours`,
-
-        `10 Things You Didn't Know About ${topic}`,
-
-        `The Biggest Mistakes Beginners Make With ${topic}`,
-
-        `I Tested the Most Popular ${topic} Tips`,
-
-        `${topic} Challenge — Can I Do It?`,
-
-        `Beginner's Guide to ${topic}`,
-
-        `I Tried ${topic} With No Experience`,
-
-        `The Ultimate ${topic} Experiment`,
-
-        `Things I Wish I Knew Before Starting ${topic}`,
-
-        `What Happens If You Take ${topic} Too Far?`
-
-    ];
-
-
-    showResults(
-        "ideaResults",
-        ideas
-    );
-
-}
-
-
-/* =========================
-   HASHTAGS
-========================= */
-
-function generateHashtags() {
-
-    const topic =
-        document
-        .getElementById(
-            "hashtagTopic"
-        )
-        .value
-        .trim();
-
-
-    if (!topic) {
-
-        alert(
-            "Enter a topic."
-        );
-
-        return;
-
-    }
-
-
-    const clean =
-        topic
-        .replace(
-            /[^a-zA-Z0-9 ]/g,
-            ""
-        )
-        .trim()
-        .replace(
-            /\s+/g,
-            ""
-        );
-
-
-    const words =
-        topic
-        .split(" ")
-        .map(
-            word =>
-                "#" +
-                word
-                .replace(
-                    /[^a-zA-Z0-9]/g,
-                    ""
-                )
-        );
-
-
-    const tags = [
-
-        "#" + clean,
-
-        "#YouTube",
-
-        "#YouTuber",
-
-        "#ContentCreator",
-
-        "#Creator",
-
-        "#Viral",
-
-        "#Trending",
-
-        "#Shorts",
-
-        "#Gaming",
-
-        "#NewVideo",
-
-        ...words
-
-    ];
-
-
-    showResults(
-        "hashtagResults",
-        [
-            tags.join(" ")
-        ]
-    );
-
-}
-
-
-/* =========================
-   GAMING NAMES
-========================= */
-
-function generateGamingNames() {
-
-    const word =
-        document
-        .getElementById(
-            "gamingWord"
-        )
-        .value
-        .trim();
-
-
-    if (!word) {
-
-        alert(
-            "Enter a word."
-        );
-
-        return;
-
-    }
-
-
-    const prefixes = [
-
-        "Dark",
-        "Shadow",
-        "Hyper",
-        "Epic",
-        "Ultra",
-        "Nova",
-        "Cyber",
-        "Ghost",
-        "Pro",
-        "Mystic",
-        "Alpha",
-        "Turbo"
-
-    ];
-
-
-    const suffixes = [
-
-        "YT",
-        "Gaming",
-        "Plays",
-        "X",
-        "HD",
-        "OP",
-        "GG",
-        "Live",
-        "Zone",
-        "King"
-
-    ];
-
-
-    const names = [];
-
-
-    for (
-        let i = 0;
-        i < 10;
-        i++
-    ) {
-
-        const prefix =
-            prefixes[
-                Math.floor(
-                    Math.random()
-                    *
-                    prefixes.length
-                )
-            ];
-
-
-        const suffix =
-            suffixes[
-                Math.floor(
-                    Math.random()
-                    *
-                    suffixes.length
-                )
-            ];
-
-
-        names.push(
-            prefix +
-            word +
-            suffix
-        );
-
-    }
-
-
-    showResults(
-        "gamingResults",
-        names
-    );
-
-}
-
-
-/* =========================
-   DESCRIPTION
-========================= */
-
-function generateDescription() {
-
-    const topic =
-        document
-        .getElementById(
-            "descriptionTopic"
-        )
-        .value
-        .trim();
-
-
-    if (!topic) {
-
-        alert(
-            "Enter a topic."
-        );
-
-        return;
-
-    }
-
-
-    const hashtag =
-        topic
-        .replace(
-            /[^a-zA-Z0-9]/g,
-            ""
-        );
-
-
-    const description =
-
-`🎬 Welcome to the video!
-
-Today we're talking about ${topic}.
-
-In this video, I'll show you what I learned and share the most important things you need to know.
-
-👍 If you enjoyed the video, don't forget to like and subscribe.
-
-🔔 Turn on notifications so you don't miss the next video!
-
-Thanks for watching!
-
-#YouTube
-#Creator
-#${hashtag}`;
-
-
-    document.getElementById(
-        "descriptionResult"
-    ).value =
-        description;
-
-}
-
-
-/* =========================
-   TEXT CASE
-========================= */
-
-function changeCase(type) {
-
-    const input =
-        document
-        .getElementById(
-            "caseInput"
-        )
-        .value;
-
-
-    let result = "";
-
-
-    if (type === "upper") {
-
-        result =
-            input.toUpperCase();
-
-    }
-
-
-    if (type === "lower") {
-
-        result =
-            input.toLowerCase();
-
-    }
-
-
-    if (type === "title") {
-
-        result =
-            input
-            .toLowerCase()
-            .replace(
-                /\b\w/g,
-                function(letter) {
-
-                    return letter.toUpperCase();
-
-                }
-            );
-
-    }
-
-
-    document.getElementById(
-        "caseResult"
-    ).value =
-        result;
-
-}
-
-
-/* =========================
-   PERCENTAGE
-========================= */
-
-function calculatePercentage() {
-
-    const percentage =
-        parseFloat(
-            document
-            .getElementById(
-                "percentage"
-            )
-            .value
-        );
-
-
-    const number =
-        parseFloat(
-            document
-            .getElementById(
-                "number"
-            )
-            .value
-        );
-
-
-    if (
-        isNaN(percentage)
-        ||
-        isNaN(number)
-    ) {
-
-        alert(
-            "Enter both numbers."
-        );
-
-        return;
-
-    }
-
-
-    const result =
-        (
-            percentage /
-            100
-        )
-        *
-        number;
-
-
-    document.getElementById(
-        "percentageResult"
-    ).innerHTML =
-
-    `<div class="result-item">
-
-        ${percentage}% of ${number}
-        =
-        <strong>${result}</strong>
-
-    </div>`;
-
-}
-
-
-/* =========================
-   COLOR GENERATOR
-========================= */
-
-function generateColor() {
-
-    const letters =
-        "0123456789ABCDEF";
-
-
-    let color =
-        "#";
-
-
-    for (
-        let i = 0;
-        i < 6;
-        i++
-    ) {
-
-        color +=
-            letters[
-                Math.floor(
-                    Math.random()
-                    *
-                    16
-                )
-            ];
-
-    }
-
-
-    document.getElementById(
-        "colorPreview"
-    ).style.background =
-        color;
-
-
-    document.getElementById(
-        "colorCode"
-    ).value =
-        color;
-
-}
-
-
-/* =========================
-   RESULTS
-========================= */
-
-function showResults(
-    elementId,
-    results
-) {
-
-    const container =
-        document.getElementById(
-            elementId
-        );
-
-
-    container.innerHTML = "";
-
-
-    results.forEach(
-        function(result) {
-
-            const item =
-                document.createElement(
-                    "div"
-                );
-
-
-            item.className =
-                "result-item";
-
-
-            item.textContent =
-                result;
-
-
-            container.appendChild(
-                item
-            );
-
-        }
-    );
-
-}
-
-
-/* =========================
-   COPY
-========================= */
-
-function copyText(id) {
-
-    const element =
-        document.getElementById(
-            id
-        );
-
-
-    navigator.clipboard
-    .writeText(
-        element.value
-    )
-    .then(
-        function() {
-
-            alert(
-                "Copied!"
-            );
-
-        }
-    );
-
-}
-
-</script>
-
 </body>
 </html>
-
- 
