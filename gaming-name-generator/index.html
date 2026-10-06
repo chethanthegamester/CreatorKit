@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Gaming Name Generator — Free Gamer Names | CreatorKit</title>
+
+<meta
+name="description"
+content="Generate unique gaming names for YouTube, Roblox, Minecraft, Fortnite and gaming profiles with CreatorKit's free Gaming Name Generator."
+>
+
+<meta
+name="keywords"
+content="gaming name generator, gamer name generator, gaming username generator, Roblox names, Minecraft names, Fortnite names, YouTube gaming names"
+>
+
+<meta name="robots" content="index, follow">
+
+<link
+rel="canonical"
+href="https://chethanthegamester.github.io/CreatorKit/gaming-name-generator/"
+>
+
+
+<style>
+
+* {
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+
+body {
+
+font-family:Arial,Helvetica,sans-serif;
+
+background:#080b14;
+
+color:#f5f7ff;
+
+line-height:1.6;
+
+}
+
+a {
+
+text-decoration:none;
+
+color:inherit;
+
+}
+
+.container {
+
+width:92%;
+
+max-width:1000px;
+
+margin:auto;
+
+}
+
+
+/* NAVIGATION */
+
+nav {
+
+background:#080b14;
+
+border-bottom:1px solid #20263a;
+
+}
+
+.nav-inner {
+
+min-height:70px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+}
+
+.logo {
+
+font-size:25px;
+
+font-weight:800;
+
+}
+
+.logo span {
+
+color:#718cff;
+
+}
+
+.back {
+
+color:#aab3ca;
+
+}
+
+
+/* HERO */
+
+.hero {
+
+text-align:center;
+
+padding:70px 20px 40px;
+
+}
+
+.hero h1 {
+
+font-size:clamp(38px,6vw,58px);
+
+margin-bottom:15px;
+
+}
+
+.hero p {
+
+max-width:720px;
+
+margin:auto;
+
+font-size:18px;
+
+color:#aab3ca;
+
+}
+
+
+/* TOOL */
+
+.tool-box {
+
+max-width:700px;
+
+margin:20px auto 60px;
+
+padding:25px;
+
+background:#101523;
+
+border:1px solid #252e46;
+
+border-radius:18px;
+
+}
+
+label {
+
+display:block;
+
+font-weight:bold;
+
+margin-bottom:8px;
+
+}
+
+input {
+
+width:100%;
+
+padding:15px;
+
+border-radius:10px;
+
+border:1px solid #303a55;
+
+background:#080b14;
+
+color:white;
+
+font-size:16px;
+
+outline:none;
+
+}
+
+input:focus {
+
+border-color:#718cff;
+
+}
+
+button {
+
+width:100%;
+
+padding:14px;
+
+margin-top:15px;
+
+border:none;
+
+border-radius:10px;
+
+background:#607cff;
+
+color:white;
+
+font-size:16px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+}
+
+button:hover {
+
+background:#718cff;
+
+}
+
+
+/* RESULTS */
+
+#results {
+
+margin-top:20px;
+
+}
+
+.name {
+
+background:#080b14;
+
+border:1px solid #252e46;
+
+border-radius:10px;
+
+padding:15px;
+
+margin-top:10px;
+
+cursor:pointer;
+
+transition:.2s;
+
+font-weight:bold;
+
+}
+
+.name:hover {
+
+border-color:#607cff;
+
+transform:translateY(-2px);
+
+}
+
+.copy-message {
+
+text-align:center;
+
+color:#7f899f;
+
+font-size:13px;
+
+margin-top:10px;
+
+}
+
+
+/* CONTENT */
+
+.content {
+
+padding-bottom:60px;
+
+}
+
+.content h2 {
+
+font-size:30px;
+
+margin:35px 0 12px;
+
+}
+
+.content p {
+
+color:#aab3ca;
+
+margin-bottom:15px;
+
+}
+
+
+/* FAQ */
+
+.faq {
+
+background:#101523;
+
+border:1px solid #202940;
+
+border-radius:12px;
+
+padding:18px;
+
+margin-top:12px;
+
+}
+
+.faq h3 {
+
+font-size:17px;
+
+margin-bottom:7px;
+
+}
+
+
+/* FOOTER */
+
+footer {
+
+border-top:1px solid #20263a;
+
+padding:30px 0;
+
+text-align:center;
+
+color:#7f899f;
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+<div class="container nav-inner">
+
+<a href="../" class="logo">
+
+Creator<span>Kit</span>
+
+</a>
+
+<a href="../" class="back">
+
+← All Tools
+
+</a>
+
+</div>
+
+</nav>
+
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="container">
+
+<h1>Gaming Name Generator</h1>
+
+<p>
+
+Create unique gamer names for YouTube, Roblox,
+Minecraft, Fortnite and your gaming profiles.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- TOOL -->
+
+<div class="container">
+
+<div class="tool-box">
+
+
+<label for="keyword">
+
+Enter a word or nickname
+
+</label>
+
+
+<input
+
+id="keyword"
+
+type="text"
+
+placeholder="Example: Shadow"
+
+/>
+
+
+<button onclick="generateNames()">
+
+Generate Gaming Names
+
+</button>
+
+
+<div id="results"></div>
+
+
+<p class="copy-message">
+
+Click a name to copy it.
+
+</p>
+
+
+</div>
+
+
+
+<!-- SEO CONTENT -->
+
+<div class="content">
+
+
+<h2>Free Gaming Name Generator</h2>
+
+
+<p>
+
+Finding a good gaming username can be difficult.
+CreatorKit's Gaming Name Generator gives you
+quick username ideas that you can use for gaming,
+YouTube, Roblox, Minecraft, Fortnite and other
+gaming platforms.
+</p>
+
+
+<p>
+
+Enter a word you like and the generator will create
+different combinations that you can use as inspiration
+for your next gamer tag.
+</p>
+
+
+
+<h2>How to use the Gaming Name Generator</h2>
+
+
+<p>
+
+<strong>1.</strong> Enter a word or nickname.
+</p>
+
+
+<p>
+
+<strong>2.</strong> Click "Generate Gaming Names".
+</p>
+
+
+<p>
+
+<strong>3.</strong> Browse the generated names.
+</p>
+
+
+<p>
+
+<strong>4.</strong> Click your favorite name to copy it.
+</p>
+
+
+<p>
+
+<strong>5.</strong> Check whether the username is
+available on the platform you want to use.
+</p>
+
+
+
+<h2>Gaming Names for YouTube</h2>
+
+
+<p>
+
+If you're creating a gaming YouTube channel,
+your channel name should be easy to remember,
+spell and pronounce.
+</p>
+
+
+<p>
+
+You can use this generator to brainstorm names,
+but always check whether the name is already being
+used by another creator or brand.
+</p>
+
+
+
+<h2>Gaming Names for Roblox</h2>
+
+
+<p>
+
+Roblox players can use the generator to brainstorm
+new username ideas. Remember that username
+availability depends on Roblox's current username
+rules and availability.
+</p>
+
+
+
+<h2>Gaming Name Tips</h2>
+
+
+<p>
+
+Try to keep your gaming name short and easy to
+remember. Avoid copying another creator's name
+or pretending to be someone else.
+</p>
+
+
+<p>
+
+Adding a unique word, nickname or theme can help
+make your gamer tag more recognizable.
+</p>
+
+
+
+<h2>Frequently Asked Questions</h2>
+
+
+
+<div class="faq">
+
+<h3>
+
+Is this Gaming Name Generator free?
+
+</h3>
+
+<p>
+
+Yes. You can generate gaming names for free
+without creating an account.
+
+</p>
+
+</div>
+
+
+
+<div class="faq">
+
+<h3>
+
+Can I use these names on YouTube?
+
+</h3>
+
+<p>
+
+Yes. You can use the generated names as inspiration
+for a YouTube gaming channel, but check that the
+name isn't already being used.
+
+</p>
+
+</div>
+
+
+
+<div class="faq">
+
+<h3>
+
+Can I use these names for Roblox?
+
+</h3>
+
+<p>
+
+You can use the generated ideas as Roblox username
+inspiration. Actual availability must be checked
+on Roblox.
+
+</p>
+
+</div>
+
+
+
+<div class="faq">
+
+<h3>
+
+Are the names guaranteed to be unique?
+
+</h3>
+
+<p>
+
+No. The generator creates combinations, but it
+cannot guarantee that a name has never been used.
+Always check availability before choosing one.
+
+</p>
+
+</div>
+
+
+
+<div class="faq">
+
+<h3>
+
+Can I make money with a gaming name?
+
+</h3>
+
+<p>
+
+A gaming name itself does not generate money.
+Creators can potentially earn through legitimate
+activities such as YouTube content, sponsorships,
+advertising and other creator opportunities.
+Income is never guaranteed.
+
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="container">
+
+<p>
+
+© 2026 CreatorKit — Free tools for creators.
+
+</p>
+
+</div>
+
+</footer>
+
+
+
+<script>
+
+
+function generateNames() {
+
+
+const keyword =
+
+document
+.getElementById("keyword")
+.value
+.trim();
+
+
+const results =
+
+document
+.getElementById("results");
+
+
+if (!keyword) {
+
+
+results.innerHTML =
+
+"<p style='color:#ff8d8d;margin-top:15px;'>Please enter a word or nickname first.</p>";
+
+return;
+
+}
+
+
+
+const prefixes = [
+
+"Dark",
+
+"Shadow",
+
+"Cyber",
+
+"Nova",
+
+"Epic",
+
+"Ultra",
+
+"Ghost",
+
+"Silent",
+
+"Frost",
+
+"Pixel",
+
+"Rapid",
+
+"Royal"
+
+];
+
+
+
+const suffixes = [
+
+"X",
+
+"YT",
+
+"Gaming",
+
+"Playz",
+
+"Pro",
+
+"OP",
+
+"King",
+
+"Zone",
+
+"Rush",
+
+"Live",
+
+"GG",
+
+"HD"
+
+];
+
+
+
+const names = [];
+
+
+
+for (let i = 0; i < 12; i++) {
+
+
+let prefix =
+
+prefixes[
+Math.floor(
+Math.random() * prefixes.length
+)
+];
+
+
+let suffix =
+
+suffixes[
+Math.floor(
+Math.random() * suffixes.length
+)
+];
+
+
+names.push(
+
+prefix +
+keyword +
+suffix
+
+);
+
+}
+
+
+
+results.innerHTML = "";
+
+
+
+[...new Set(names)].forEach(function(name) {
+
+
+const div =
+
+document.createElement("div");
+
+
+div.className = "name";
+
+
+div.textContent = name;
+
+
+
+div.onclick = function() {
+
+
+navigator.clipboard.writeText(name);
+
+
+const oldText = name;
+
+
+div.textContent =
+
+"✓ Copied: " + name;
+
+
+
+setTimeout(function() {
+
+div.textContent = oldText;
+
+},1200);
+
+
+};
+
+
+
+results.appendChild(div);
+
+
+});
+
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
