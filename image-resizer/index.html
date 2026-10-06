@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Free Image Resizer - Resize Images Online | CreatorKit</title>
+
+  <meta name="description" content="Resize images online for free with CreatorKit's Image Resizer. Change image width and height directly in your browser without uploading your image.">
+
+  <meta name="keywords" content="image resizer, resize image online, free image resizer, image resize tool, resize photo, resize JPG PNG, YouTube thumbnail resizer">
+
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://chethanthegamester.github.io/CreatorKit/image-resizer/">
+
+  <meta property="og:title" content="Free Image Resizer Online | CreatorKit">
+  <meta property="og:description" content="Resize JPG, PNG and other browser-supported images for free.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://chethanthegamester.github.io/CreatorKit/image-resizer/">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #020617;
+      border-bottom: 1px solid #1e293b;
+      padding: 18px 20px;
+    }
+
+    nav {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      color: #38bdf8;
+      font-size: 24px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    nav a {
+      color: #cbd5e1;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #38bdf8;
+    }
+
+    .hero {
+      max-width: 900px;
+      margin: auto;
+      padding: 70px 20px 40px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(34px, 6vw, 58px);
+      color: white;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: auto;
+      color: #94a3b8;
+      font-size: 18px;
+    }
+
+    .tool-box {
+      max-width: 800px;
+      margin: 20px auto 70px;
+      padding: 30px;
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 18px;
+    }
+
+    .upload-area {
+      border: 2px dashed #475569;
+      border-radius: 14px;
+      padding: 35px 20px;
+      text-align: center;
+      margin-bottom: 25px;
+      transition: 0.2s;
+    }
+
+    .upload-area:hover {
+      border-color: #38bdf8;
+    }
+
+    .upload-area p {
+      color: #94a3b8;
+      margin-bottom: 15px;
+    }
+
+    input[type="file"] {
+      width: 100%;
+      padding: 12px;
+      background: #0f172a;
+      color: #cbd5e1;
+      border: 1px solid #475569;
+      border-radius: 10px;
+    }
+
+    .dimensions {
+      display: none;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    label {
+      display: block;
+      color: #f8fafc;
+      font-weight: bold;
+      margin-bottom: 7px;
+    }
+
+    input[type="number"] {
+      width: 100%;
+      padding: 13px;
+      background: #0f172a;
+      color: white;
+      border: 1px solid #475569;
+      border-radius: 9px;
+      font-size: 16px;
+    }
+
+    .checkbox {
+      margin: 20px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #cbd5e1;
+    }
+
+    .checkbox input {
+      width: 18px;
+      height: 18px;
+    }
+
+    button {
+      width: 100%;
+      padding: 15px;
+      border: none;
+      border-radius: 10px;
+      background: #38bdf8;
+      color: #082f49;
+      font-size: 17px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background: #7dd3fc;
+    }
+
+    .download-btn {
+      display: none;
+      background: #22c55e;
+      color: #052e16;
+      text-decoration: none;
+      text-align: center;
+      padding: 15px;
+      border-radius: 10px;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    .preview {
+      display: none;
+      text-align: center;
+      margin-top: 25px;
+    }
+
+    .preview img {
+      max-width: 100%;
+      max-height: 400px;
+      border-radius: 10px;
+      border: 1px solid #475569;
+    }
+
+    .content {
+      max-width: 900px;
+      margin: auto;
+      padding: 0 20px 70px;
+    }
+
+    .content section {
+      margin-bottom: 45px;
+    }
+
+    .content h2 {
+      color: white;
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+
+    .content h3 {
+      color: #38bdf8;
+      margin-top: 25px;
+    }
+
+    .content p,
+    .content li {
+      color: #cbd5e1;
+    }
+
+    .content ul {
+      padding-left: 25px;
+    }
+
+    .faq {
+      border-top: 1px solid #334155;
+      padding: 18px 0;
+    }
+
+    .faq strong {
+      display: block;
+      color: white;
+      margin-bottom: 7px;
+    }
+
+    footer {
+      background: #020617;
+      text-align: center;
+      padding: 30px 20px;
+      color: #64748b;
+      font-size: 14px;
+    }
+
+    footer a {
+      color: #38bdf8;
+      text-decoration: none;
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+      }
+
+      .tool-box {
+        margin-left: 15px;
+        margin-right: 15px;
+        padding: 20px;
+      }
+
+      .dimensions {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <nav>
+    <a class="logo" href="../">CreatorKit</a>
+    <a href="../">← Back to CreatorKit</a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="hero">
+    <h1>Free Image Resizer</h1>
+
+    <p>
+      Resize images online for free. Change the width and height of your
+      photos directly in your browser without uploading them to a server.
+    </p>
+  </section>
+
+  <section class="tool-box">
+
+    <div class="upload-area">
+      <p>Select an image to begin.</p>
+
+      <input
+        type="file"
+        id="imageInput"
+        accept="image/*"
+      >
+    </div>
+
+    <div class="dimensions" id="dimensions">
+
+      <div>
+        <label for="width">Width (px)</label>
+
+        <input
+          type="number"
+          id="width"
+          min="1"
+        >
+      </div>
+
+      <div>
+        <label for="height">Height (px)</label>
+
+        <input
+          type="number"
+          id="height"
+          min="1"
+        >
+      </div>
+
+    </div>
+
+    <label class="checkbox">
+      <input
+        type="checkbox"
+        id="lockRatio"
+        checked
+      >
+      Keep aspect ratio
+    </label>
+
+    <button onclick="resizeImage()">
+      Resize Image
+    </button>
+
+    <div class="preview" id="preview">
+      <h3>Preview</h3>
+
+      <img id="previewImage" alt="Resized image preview">
+    </div>
+
+    <a
+      id="downloadBtn"
+      class="download-btn"
+      download="resized-image.png"
+    >
+      Download Resized Image
+    </a>
+
+  </section>
+
+  <section class="content">
+
+    <section>
+      <h2>What is an Image Resizer?</h2>
+
+      <p>
+        An image resizer changes the dimensions of a picture by adjusting
+        its width and height. This can be useful when you need an image
+        to fit a specific size for a website, social media platform,
+        thumbnail or other digital project.
+      </p>
+
+      <p>
+        CreatorKit's free image resizer processes the image directly in
+        your browser. Your selected image does not need to be uploaded
+        to a CreatorKit server.
+      </p>
+    </section>
+
+    <section>
+      <h2>How to Resize an Image</h2>
+
+      <h3>1. Select your image</h3>
+
+      <p>
+        Click the upload box and choose an image from your device.
+      </p>
+
+      <h3>2. Enter the new dimensions</h3>
+
+      <p>
+        Enter the width and height you want for the resized image.
+      </p>
+
+      <h3>3. Keep the aspect ratio</h3>
+
+      <p>
+        Keep the aspect-ratio option enabled if you want to reduce the
+        chance of stretching or squashing the image.
+      </p>
+
+      <h3>4. Resize and download</h3>
+
+      <p>
+        Click the resize button and then download the resulting image.
+      </p>
+    </section>
+
+    <section>
+      <h2>Why Resize Images?</h2>
+
+      <ul>
+        <li>Create appropriately sized YouTube thumbnails.</li>
+        <li>Prepare images for websites and blogs.</li>
+        <li>Reduce image dimensions for social media.</li>
+        <li>Create smaller versions of large photos.</li>
+        <li>Prepare images for documents and presentations.</li>
+        <li>Make images fit specific pixel dimensions.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Image Resizing Tips</h2>
+
+      <p>
+        When resizing an image, keeping the original aspect ratio usually
+        produces a more natural result. If you need an exact width and
+        height, you can disable the aspect-ratio option, but this may
+        distort the image.
+      </p>
+
+      <p>
+        If you are trying to reduce the file size rather than only change
+        its dimensions, an image compressor can be more appropriate.
+      </p>
+    </section>
+
+    <section>
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq">
+        <strong>Is this image resizer free?</strong>
+
+        <p>
+          Yes. CreatorKit's image resizer is free to use.
+        </p>
+      </div>
+
+      <div class="faq">
+        <strong>Do I need to upload my image to a server?</strong>
+
+        <p>
+          No. The resizing is performed directly in your browser.
+        </p>
+      </div>
+
+      <div class="faq">
+        <strong>Can I resize JPG and PNG images?</strong>
+
+        <p>
+          Yes. The tool supports image formats that your web browser can
+          load, including common formats such as JPG and PNG.
+        </p>
+      </div>
+
+      <div class="faq">
+        <strong>Will resizing automatically reduce file size?</strong>
+
+        <p>
+          Not necessarily. Changing dimensions can reduce the file size,
+          but compression and image format also affect the final size.
+        </p>
+      </div>
+
+      <div class="faq">
+        <strong>Can I resize a YouTube thumbnail?</strong>
+
+        <p>
+          Yes. You can use the tool to change a thumbnail's pixel dimensions
+          to the size you need.
+        </p>
+      </div>
+
+    </section>
+
+  </section>
+
+</main>
+
+<footer>
+  <p>
+    © 2026 CreatorKit. Free creator tools for YouTubers and content creators.
+  </p>
+
+  <p>
+    <a href="../">CreatorKit Home</a>
+  </p>
+</footer>
+
+<script>
+let originalImage = null;
+let originalWidth = 0;
+let originalHeight = 0;
+
+const imageInput = document.getElementById("imageInput");
+const widthInput = document.getElementById("width");
+const heightInput = document.getElementById("height");
+const lockRatio = document.getElementById("lockRatio");
+
+imageInput.addEventListener("change", function() {
+
+  const file = this.files[0];
+
+  if (!file) {
+    return;
+  }
+
+  if (!file.type.startsWith("image/")) {
+    alert("Please select a valid image.");
+    return;
+  }
+
+  const reader = new FileReader();
+
+  reader.onload = function(event) {
+
+    const img = new Image();
+
+    img.onload = function() {
+
+      originalImage = img;
+      originalWidth = img.width;
+      originalHeight = img.height;
+
+      widthInput.value = originalWidth;
+      heightInput.value = originalHeight;
+
+      document.getElementById("dimensions").style.display = "grid";
+
+      document.getElementById("previewImage").src = event.target.result;
+
+      document.getElementById("preview").style.display = "block";
+
+      document.getElementById("downloadBtn").style.display = "none";
+    };
+
+    img.src = event.target.result;
+  };
+
+  reader.readAsDataURL(file);
+});
+
+widthInput.addEventListener("input", function() {
+
+  if (!lockRatio.checked || !originalImage) {
+    return;
+  }
+
+  const newWidth = Number(widthInput.value);
+
+  if (newWidth > 0) {
+    heightInput.value = Math.round(
+      newWidth * originalHeight / originalWidth
+    );
+  }
+});
+
+heightInput.addEventListener("input", function() {
+
+  if (!lockRatio.checked || !originalImage) {
+    return;
+  }
+
+  const newHeight = Number(heightInput.value);
+
+  if (newHeight > 0) {
+    widthInput.value = Math.round(
+      newHeight * originalWidth / originalHeight
+    );
+  }
+});
+
+function resizeImage() {
+
+  if (!originalImage) {
+    alert("Please select an image first.");
+    return;
+  }
+
+  const newWidth = Number(widthInput.value);
+  const newHeight = Number(heightInput.value);
+
+  if (!newWidth || !newHeight || newWidth < 1 || newHeight < 1) {
+    alert("Please enter valid width and height values.");
+    return;
+  }
+
+  const canvas = document.createElement("canvas");
+
+  canvas.width = newWidth;
+  canvas.height = newHeight;
+
+  const context = canvas.getContext("2d");
+
+  context.drawImage(
+    originalImage,
+    0,
+    0,
+    newWidth,
+    newHeight
+  );
+
+  const resizedImage = canvas.toDataURL("image/png");
+
+  document.getElementById("previewImage").src = resizedImage;
+
+  const downloadBtn = document.getElementById("downloadBtn");
+
+  downloadBtn.href = resizedImage;
+  downloadBtn.style.display = "block";
+}
+</script>
+
+</body>
+</html>
