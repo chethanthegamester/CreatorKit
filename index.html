@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CreatorKit - Free Creator Tools</title>
+
+<meta name="description"
+content="Free tools for YouTubers and content creators. Resize images, generate YouTube titles and descriptions.">
+
+<style>
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #080b14;
+    color: white;
+    min-height: 100vh;
+}
+
+/* NAVBAR */
+
+.navbar {
+    height: 70px;
+    border-bottom: 1px solid #22283a;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 7%;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #7c5cff;
+}
+
+.nav-button {
+    background: #7c5cff;
+    color: white;
+    padding: 11px 18px;
+    border-radius: 9px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* HERO */
+
+.hero {
+    text-align: center;
+    padding: 80px 20px 60px;
+}
+
+.badge {
+    display: inline-block;
+    padding: 8px 14px;
+    border: 1px solid #393060;
+    background: #151128;
+    border-radius: 30px;
+    color: #b8aaff;
+    font-size: 14px;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 7vw, 76px);
+    line-height: 1;
+    margin: 20px 0;
+    letter-spacing: -3px;
+}
+
+.hero p {
+    max-width: 680px;
+    margin: auto;
+    color: #aab1c5;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* TOOLS */
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.tools {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 60px;
+}
+
+.tool-card {
+    background: #111625;
+    border: 1px solid #252d43;
+    border-radius: 18px;
+    padding: 25px;
+    transition: 0.2s;
+}
+
+.tool-card:hover {
+    transform: translateY(-5px);
+    border-color: #51477c;
+}
+
+.tool-icon {
+    font-size: 35px;
+}
+
+.tool-card h2 {
+    margin: 15px 0 8px;
+}
+
+.tool-card p {
+    color: #9da6bd;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.tool-button {
+    width: 100%;
+    padding: 13px;
+    border-radius: 9px;
+    background: #7c5cff;
+    color: white;
+}
+
+/* TOOL PANEL */
+
+.panel {
+    display: none;
+    background: #111625;
+    border: 1px solid #252d43;
+    border-radius: 18px;
+    padding: 30px;
+    margin-bottom: 60px;
+}
+
+.panel.active {
+    display: block;
+}
+
+.panel h2 {
+    margin-bottom: 20px;
+}
+
+.upload {
+    border: 2px dashed #3c4761;
+    border-radius: 14px;
+    padding: 35px;
+    text-align: center;
+    color: #aab1c5;
+    cursor: pointer;
+}
+
+.upload input {
+    display: none;
+}
+
+.preview {
+    display: block;
+    max-width: 100%;
+    max-height: 350px;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+
+.input-row {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 13px;
+    border-radius: 9px;
+    border: 1px solid #303951;
+    background: #080b14;
+    color: white;
+    outline: none;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #7c5cff;
+}
+
+.primary {
+    background: #7c5cff;
+    color: white;
+    padding: 13px 18px;
+    border-radius: 9px;
+    white-space: nowrap;
+}
+
+.secondary {
+    background: #171d2d;
+    color: white;
+    border: 1px solid #303951;
+    padding: 13px 18px;
+    border-radius: 9px;
+}
+
+.result {
+    margin-top: 20px;
+}
+
+.result-item {
+    background: #0c111e;
+    border: 1px solid #29334b;
+    border-radius: 9px;
+    padding: 14px;
+    margin-bottom: 10px;
+}
+
+/* MONEY SECTION */
+
+.money {
+    background: linear-gradient(135deg, #14112a, #101827);
+    border: 1px solid #342c62;
+    border-radius: 18px;
+    padding: 30px;
+    margin-bottom: 60px;
+}
+
+.money h2 {
+    margin-bottom: 12px;
+}
+
+.money p {
+    color: #aeb6ca;
+    line-height: 1.6;
+}
+
+.money ul {
+    margin: 20px 0 0 20px;
+    color: #c7cede;
+    line-height: 2;
+}
+
+/* FOOTER */
+
+footer {
+    border-top: 1px solid #22283a;
+    text-align: center;
+    padding: 30px 20px;
+    color: #777f95;
+    font-size: 14px;
+}
+
+/* MOBILE */
+
+@media (max-width: 750px) {
+
+    .tools {
+        grid-template-columns: 1fr;
+    }
+
+    .navbar {
+        padding: 0 20px;
+    }
+
+    .hero {
+        padding-top: 55px;
+    }
+
+    .hero h1 {
+        letter-spacing: -2px;
+    }
+
+    .input-row {
+        flex-direction: column;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        Creator<span>Kit</span>
+    </div>
+
+    <a href="#tools" class="nav-button">
+        Use Tools
+    </a>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="badge">
+        100% Free Creator Tools
+    </div>
+
+    <h1>
+        Create faster.<br>
+        Grow bigger.
+    </h1>
+
+    <p>
+        Simple free tools for YouTubers, gamers and content creators.
+        Resize images, generate video titles and create descriptions.
+    </p>
+
+</section>
+
+
+<div class="container">
+
+<!-- TOOLS -->
+
+<section class="tools" id="tools">
+
+    <div class="tool-card">
+
+        <div class="tool-icon">🖼️</div>
+
+        <h2>
+            Image Resizer
+        </h2>
+
+        <p>
+            Resize any image to the exact size you need.
+        </p>
+
+        <button class="tool-button"
+        onclick="openTool('resizeTool')">
+            Open Tool
+        </button>
+
+    </div>
+
+
+    <div class="tool-card">
+
+        <div class="tool-icon">🎯</div>
+
+        <h2>
+            YouTube Titles
+        </h2>
+
+        <p>
+            Generate catchy title ideas for your videos.
+        </p>
+
+        <button class="tool-button"
+        onclick="openTool('titleTool')">
+            Open Tool
+        </button>
+
+    </div>
+
+
+    <div class="tool-card">
+
+        <div class="tool-icon">✍️</div>
+
+        <h2>
+            Description Helper
+        </h2>
+
+        <p>
+            Create a simple YouTube description in seconds.
+        </p>
+
+        <button class="tool-button"
+        onclick="openTool('descriptionTool')">
+            Open Tool
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- IMAGE RESIZER -->
+
+<section class="panel" id="resizeTool">
+
+    <h2>
+        🖼️ Image Resizer
+    </h2>
+
+    <label class="upload">
+
+        Click here to select an image
+
+        <input
+        type="file"
+        id="imageInput"
+        accept="image/*">
+
+        <br><br>
+
+        JPG, PNG and WEBP supported
+
+    </label>
+
+    <img
+    id="imagePreview"
+    class="preview"
+    style="display:none">
+
+    <div class="input-row">
+
+        <input
+        type="number"
+        id="width"
+        value="1280"
+        placeholder="Width">
+
+        <input
+        type="number"
+        id="height"
+        value="720"
+        placeholder="Height">
+
+        <button
+        class="primary"
+        onclick="resizeImage()">
+
+            Resize & Download
+
+        </button>
+
+    </div>
+
+    <div
+    id="resizeMessage"
+    class="result">
+    </div>
+
+</section>
+
+
+<!-- TITLE GENERATOR -->
+
+<section class="panel" id="titleTool">
+
+    <h2>
+        🎯 YouTube Title Generator
+    </h2>
+
+    <div class="input-row">
+
+        <input
+        type="text"
+        id="videoTopic"
+        placeholder="Example: I played Roblox for 24 hours">
+
+        <button
+        class="primary"
+        onclick="generateTitles()">
+
+            Generate
+
+        </button>
+
+    </div>
+
+    <div
+    id="titleResults"
+    class="result">
+    </div>
+
+</section>
+
+
+<!-- DESCRIPTION GENERATOR -->
+
+<section class="panel" id="descriptionTool">
+
+    <h2>
+        ✍️ YouTube Description Helper
+    </h2>
+
+    <div class="input-row">
+
+        <input
+        type="text"
+        id="descriptionTopic"
+        placeholder="Example: Roblox challenge">
+
+        <button
+        class="primary"
+        onclick="generateDescription()">
+
+            Generate
+
+        </button>
+
+    </div>
+
+    <textarea
+    id="descriptionResult"
+    rows="10"
+    style="margin-top:20px">
+    </textarea>
+
+    <br><br>
+
+    <button
+    class="secondary"
+    onclick="copyDescription()">
+
+        Copy Description
+
+    </button>
+
+</section>
+
+
+<!-- MONEY -->
+
+<section class="money">
+
+    <h2>
+        💰 How CreatorKit Can Make Money
+    </h2>
+
+    <p>
+        The tools are free for visitors. Once the website gets
+        real traffic, you can monetize it legitimately.
+    </p>
+
+    <ul>
+
+        <li>
+            Advertising from legitimate ad networks
+        </li>
+
+        <li>
+            Relevant affiliate links
+        </li>
+
+        <li>
+            Premium creator tools later
+        </li>
+
+        <li>
+            Sponsored placements
+        </li>
+
+    </ul>
+
+    <br>
+
+    <p>
+        <strong>
+            Important:
+        </strong>
+
+        Never promise users guaranteed earnings or ask them
+        to deposit money just to use the website.
+    </p>
+
+</section>
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    © 2026 CreatorKit · Free creator tools
+
+</footer>
+
+
+<script>
+
+/* OPEN TOOL */
+
+function openTool(toolId) {
+
+    const panels =
+        document.querySelectorAll(".panel");
+
+    panels.forEach(function(panel) {
+
+        panel.classList.remove("active");
+
+    });
+
+    const selected =
+        document.getElementById(toolId);
+
+    selected.classList.add("active");
+
+    selected.scrollIntoView({
+        behavior: "smooth"
+    });
+
+}
+
+
+/* IMAGE RESIZER */
+
+let selectedImage = null;
+
+
+document
+.getElementById("imageInput")
+.addEventListener("change", function(event) {
+
+    const file = event.target.files[0];
+
+    if (!file) {
+        return;
+    }
+
+    const reader = new FileReader();
+
+    reader.onload = function(e) {
+
+        selectedImage = new Image();
+
+        selectedImage.onload = function() {
+
+            const preview =
+                document.getElementById("imagePreview");
+
+            preview.src = e.target.result;
+
+            preview.style.display = "block";
+
+            document.getElementById(
+                "resizeMessage"
+            ).innerHTML =
+            "<div class='result-item'>" +
+            "Image loaded: " +
+            selectedImage.width +
+            " × " +
+            selectedImage.height +
+            " pixels" +
+            "</div>";
+
+        };
+
+        selectedImage.src = e.target.result;
+
+    };
+
+    reader.readAsDataURL(file);
+
+});
+
+
+function resizeImage() {
+
+    if (!selectedImage) {
+
+        document.getElementById(
+            "resizeMessage"
+        ).innerHTML =
+        "<div class='result-item'>" +
+        "Please select an image first." +
+        "</div>";
+
+        return;
+
+    }
+
+
+    const width =
+        parseInt(
+            document.getElementById("width").value
+        );
+
+    const height =
+        parseInt(
+            document.getElementById("height").value
+        );
+
+
+    if (!width || !height) {
+
+        alert("Enter width and height.");
+
+        return;
+
+    }
+
+
+    const canvas =
+        document.createElement("canvas");
+
+    canvas.width = width;
+    canvas.height = height;
+
+
+    const context =
+        canvas.getContext("2d");
+
+
+    context.drawImage(
+        selectedImage,
+        0,
+        0,
+        width,
+        height
+    );
+
+
+    canvas.toBlob(function(blob) {
+
+        const url =
+            URL.createObjectURL(blob);
+
+        const link =
+            document.createElement("a");
+
+        link.href = url;
+
+        link.download =
+            "CreatorKit-Resized.png";
+
+        link.click();
+
+        URL.revokeObjectURL(url);
+
+    }, "image/png");
+
+}
+
+
+/* TITLE GENERATOR */
+
+function generateTitles() {
+
+    const topic =
+        document
+        .getElementById("videoTopic")
+        .value
+        .trim();
+
+
+    if (!topic) {
+
+        alert("Enter your video topic.");
+
+        return;
+
+    }
+
+
+    const titles = [
+
+        "I Tried " +
+        topic +
+        "… Here's What Happened",
+
+        "I Tested " +
+        topic +
+        " So You Don't Have To",
+
+        "The Truth About " +
+        topic,
+
+        "I Spent 24 Hours Doing " +
+        topic,
+
+        "Can I Actually Succeed at " +
+        topic +
+        "?",
+
+        "Nobody Expected This When I Tried " +
+        topic,
+
+        "This Completely Changed My " +
+        topic,
+
+        "I Can't Believe This Happened While " +
+        topic
+
+    ];
+
+
+    const results =
+        document.getElementById(
+            "titleResults"
+        );
+
+
+    results.innerHTML = "";
+
+
+    titles.forEach(function(title) {
+
+        const item =
+            document.createElement("div");
+
+        item.className =
+            "result-item";
+
+        item.textContent =
+            title;
+
+        results.appendChild(item);
+
+    });
+
+}
+
+
+/* DESCRIPTION GENERATOR */
+
+function generateDescription() {
+
+    const topic =
+        document
+        .getElementById("descriptionTopic")
+        .value
+        .trim();
+
+
+    if (!topic) {
+
+        alert("Enter your video topic.");
+
+        return;
+
+    }
+
+
+    const description =
+
+`In this video, I explore ${topic} and share everything I learned.
+
+If you enjoyed the video, make sure to like the video and subscribe for more content!
+
+Thanks for watching!
+
+#YouTube
+#Gaming
+#Creator
+#${topic.replace(/[^a-zA-Z0-9]/g, "")}`;
+
+
+    document.getElementById(
+        "descriptionResult"
+    ).value = description;
+
+}
+
+
+/* COPY */
+
+function copyDescription() {
+
+    const text =
+        document.getElementById(
+            "descriptionResult"
+        );
+
+
+    navigator.clipboard
+    .writeText(text.value)
+    .then(function() {
+
+        alert(
+            "Description copied!"
+        );
+
+    });
+
+}
+
+</script>
+
+</body>
+</html>
