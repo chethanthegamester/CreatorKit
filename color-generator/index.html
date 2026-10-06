@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Free Color Generator - Random Colors & HEX Codes | CreatorKit</title>
+
+  <meta name="description" content="Generate random colors and HEX codes for free with CreatorKit's online Color Generator. Create colors for websites, thumbnails, graphics and creative projects.">
+
+  <meta name="keywords" content="color generator, random color generator, hex color generator, color picker, random hex color, free color generator, color tool">
+
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://chethanthegamester.github.io/CreatorKit/color-generator/">
+
+  <meta property="og:title" content="Free Color Generator | CreatorKit">
+  <meta property="og:description" content="Generate random colors and HEX codes instantly with CreatorKit.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://chethanthegamester.github.io/CreatorKit/color-generator/">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #020617;
+      border-bottom: 1px solid #1e293b;
+      padding: 18px 20px;
+    }
+
+    nav {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      color: #38bdf8;
+      font-size: 24px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    nav a {
+      color: #cbd5e1;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #38bdf8;
+    }
+
+    .hero {
+      max-width: 900px;
+      margin: auto;
+      padding: 70px 20px 40px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(34px, 6vw, 58px);
+      color: white;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: auto;
+      color: #94a3b8;
+      font-size: 18px;
+    }
+
+    .tool-box {
+      max-width: 800px;
+      margin: 20px auto 70px;
+      padding: 30px;
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 18px;
+    }
+
+    .color-preview {
+      width: 100%;
+      height: 280px;
+      border-radius: 14px;
+      background: #38bdf8;
+      border: 1px solid #475569;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 25px;
+      transition: background 0.2s;
+    }
+
+    .preview-label {
+      background: rgba(0, 0, 0, 0.55);
+      color: white;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 20px;
+      letter-spacing: 1px;
+    }
+
+    .color-value {
+      text-align: center;
+      font-size: 30px;
+      font-weight: bold;
+      color: white;
+      margin: 20px 0;
+    }
+
+    .color-input {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    input[type="color"] {
+      width: 70px;
+      height: 50px;
+      padding: 3px;
+      background: #0f172a;
+      border: 1px solid #475569;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    input[type="text"] {
+      flex: 1;
+      padding: 14px;
+      background: #0f172a;
+      color: white;
+      border: 1px solid #475569;
+      border-radius: 9px;
+      font-size: 17px;
+      text-transform: uppercase;
+      outline: none;
+    }
+
+    input[type="text"]:focus {
+      border-color: #38bdf8;
+    }
+
+    .buttons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    button {
+      width: 100%;
+      padding: 15px;
+      border: none;
+      border-radius: 10px;
+      background: #38bdf8;
+      color: #082f49;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #7dd3fc;
+    }
+
+    .copy-btn {
+      background: #22c55e;
+      color: #052e16;
+    }
+
+    .copy-btn:hover {
+      background: #4ade80;
+    }
+
+    .content {
+      max-width: 900px;
+      margin: auto;
+      padding: 0 20px 70px;
+    }
+
+    .content section {
+      margin-bottom: 45px;
+    }
+
+    .content h2 {
+      color: white;
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+
+    .content h3 {
+      color: #38bdf8;
+      margin-top: 25px;
+    }
+
+    .content p,
+    .content li {
+      color: #cbd5e1;
+    }
+
+    .content ul {
+      padding-left: 25px;
+    }
+
+    .faq {
+      border-top: 1px solid #334155;
+      padding: 18px 0;
+    }
+
+    .faq strong {
+      display: block;
+      color: white;
+      margin-bottom: 7px;
+    }
+
+    footer {
+      background: #020617;
+      text-align: center;
+      padding: 30px 20px;
+      color: #64748b;
+      font-size: 14px;
+    }
+
+    footer a {
+      color: #38bdf8;
+      text-decoration: none;
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+      }
+
+      .tool-box {
+        margin-left: 15px;
+        margin-right: 15px;
+        padding: 20px;
+      }
+
+      .color-preview {
+        height: 220px;
+      }
+
+      .buttons {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <nav>
+    <a class="logo" href="../">CreatorKit</a>
+    <a href="../">← Back to CreatorKit</a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="hero">
+    <h1>Free Color Generator</h1>
+
+    <p>
+      Generate random colors, explore HEX codes and choose colors for
+      websites, thumbnails, graphics and creative projects.
+    </p>
+  </section>
+
+  <section class="tool-box">
+
+    <div
+      class="color-preview"
+      id="colorPreview"
+    >
+      <div
+        class="preview-label"
+        id="previewLabel"
+      >
+        #38BDF8
+      </div>
+    </div>
+
+    <div
+      class="color-value"
+      id="colorValue"
+    >
+      #38BDF8
+    </div>
+
+    <div class="color-input">
+
+      <input
+        type="color"
+        id="colorPicker"
+        value="#38BDF8"
+      >
+
+      <input
+        type="text"
+        id="hexInput"
+        value="#38BDF8"
+        maxlength="7"
+        placeholder="#38BDF8"
+      >
+
+    </div>
+
+    <div class="buttons">
+
+      <button onclick="generateColor()">
+        Generate Random Color
+      </button>
+
+      <button
+        class="copy-btn"
+        onclick="copyColor()"
+      >
+        Copy HEX Code
+      </button>
+
+    </div>
+
+  </section>
+
+  <section class="content">
+
+    <section>
+
+      <h2>What is a Color Generator?</h2>
+
+      <p>
+        A color generator creates color values that can be used in digital
+        designs, websites, thumbnails, logos, graphics and other creative
+        projects.
+      </p>
+
+      <p>
+        CreatorKit's Color Generator lets you generate random colors and
+        instantly see their HEX codes. You can also use the color picker
+        to manually choose a color.
+      </p>
+
+    </section>
+
+
+    <section>
+
+      <h2>What is a HEX Color Code?</h2>
+
+      <p>
+        A HEX color code is a common way of representing colors in digital
+        design. It normally starts with a # symbol followed by six
+        hexadecimal characters.
+      </p>
+
+      <p>
+        For example:
+      </p>
+
+      <h3>#38BDF8</h3>
+
+      <p>
+        The first two characters represent red, the next two represent
+        green and the final two represent blue.
+      </p>
+
+    </section>
+
+
+    <section>
+
+      <h2>Where Can You Use Generated Colors?</h2>
+
+      <ul>
+        <li>YouTube thumbnails.</li>
+        <li>Gaming channel graphics.</li>
+        <li>Website designs.</li>
+        <li>Social media graphics.</li>
+        <li>Logos and branding.</li>
+        <li>Presentations.</li>
+        <li>Digital artwork.</li>
+        <li>CSS website styles.</li>
+      </ul>
+
+    </section>
+
+
+    <section>
+
+      <h2>How to Use the Color Generator</h2>
+
+      <h3>Generate a random color</h3>
+
+      <p>
+        Click the Generate Random Color button to create a new color.
+      </p>
+
+      <h3>Choose your own color</h3>
+
+      <p>
+        Click the color picker and select any color you want.
+      </p>
+
+      <h3>Enter a HEX code</h3>
+
+      <p>
+        You can type a valid HEX code into the text field to preview it.
+      </p>
+
+      <h3>Copy the color</h3>
+
+      <p>
+        Click Copy HEX Code to copy the color value to your clipboard.
+      </p>
+
+    </section>
+
+
+    <section>
+
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq">
+
+        <strong>
+          Is this Color Generator free?
+        </strong>
+
+        <p>
+          Yes. CreatorKit's Color Generator is free to use.
+        </p>
+
+      </div>
+
+      <div class="faq">
+
+        <strong>
+          What color format does the tool generate?
+        </strong>
+
+        <p>
+          The generator displays colors as HEX codes, such as #FF5733.
+        </p>
+
+      </div>
+
+      <div class="faq">
+
+        <strong>
+          Can I choose a specific color?
+        </strong>
+
+        <p>
+          Yes. Use the built-in color picker or enter a valid HEX code.
+        </p>
+
+      </div>
+
+      <div class="faq">
+
+        <strong>
+          Can I use these colors for YouTube thumbnails?
+        </strong>
+
+        <p>
+          Yes. The generated colors can be used as inspiration for
+          thumbnails, graphics and other creator projects.
+        </p>
+
+      </div>
+
+      <div class="faq">
+
+        <strong>
+          Can I copy the HEX code?
+        </strong>
+
+        <p>
+          Yes. Click the Copy HEX Code button to copy the current color.
+        </p>
+
+      </div>
+
+    </section>
+
+  </section>
+
+</main>
+
+<footer>
+
+  <p>
+    © 2026 CreatorKit. Free creator tools for YouTubers and content creators.
+  </p>
+
+  <p>
+    <a href="../">CreatorKit Home</a>
+  </p>
+
+</footer>
+
+
+<script>
+
+const colorPreview =
+  document.getElementById("colorPreview");
+
+const previewLabel =
+  document.getElementById("previewLabel");
+
+const colorValue =
+  document.getElementById("colorValue");
+
+const colorPicker =
+  document.getElementById("colorPicker");
+
+const hexInput =
+  document.getElementById("hexInput");
+
+
+function updateColor(hex) {
+
+  hex = hex.toUpperCase();
+
+  colorPreview.style.background = hex;
+
+  previewLabel.textContent = hex;
+
+  colorValue.textContent = hex;
+
+  colorPicker.value = hex;
+
+  hexInput.value = hex;
+}
+
+
+function generateColor() {
+
+  const characters =
+    "0123456789ABCDEF";
+
+  let hex = "#";
+
+  for (let i = 0; i < 6; i++) {
+
+    hex += characters[
+      Math.floor(
+        Math.random() * 16
+      )
+    ];
+
+  }
+
+  updateColor(hex);
+}
+
+
+function isValidHex(hex) {
+
+  return /^#[0-9A-Fa-f]{6}$/.test(hex);
+
+}
+
+
+colorPicker.addEventListener(
+  "input",
+  function() {
+
+    updateColor(this.value);
+
+  }
+);
+
+
+hexInput.addEventListener(
+  "input",
+  function() {
+
+    let value = this.value.trim();
+
+    if (!value.startsWith("#")) {
+      value = "#" + value;
+    }
+
+    if (isValidHex(value)) {
+      updateColor(value);
+    }
+
+  }
+);
+
+
+hexInput.addEventListener(
+  "blur",
+  function() {
+
+    let value = this.value.trim();
+
+    if (!value.startsWith("#")) {
+      value = "#" + value;
+    }
+
+    if (!isValidHex(value)) {
+
+      alert(
+        "Please enter a valid HEX color, such as #38BDF8."
+      );
+
+      updateColor("#38BDF8");
+
+    }
+
+  }
+);
+
+
+function copyColor() {
+
+  const hex = colorValue.textContent;
+
+  navigator.clipboard.writeText(hex)
+    .then(function() {
+
+      alert("HEX code copied: " + hex);
+
+    })
+    .catch(function() {
+
+      const temporary =
+        document.createElement("textarea");
+
+      temporary.value = hex;
+
+      document.body.appendChild(temporary);
+
+      temporary.select();
+
+      document.execCommand("copy");
+
+      temporary.remove();
+
+      alert("HEX code copied: " + hex);
+
+    });
+
+}
+
+</script>
+
+</body>
+</html>
