@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Free Text Case Converter - Uppercase, Lowercase & More | CreatorKit</title>
+
+  <meta name="description" content="Convert text to uppercase, lowercase, title case, sentence case and more with CreatorKit's free online Text Case Converter.">
+
+  <meta name="keywords" content="text case converter, uppercase converter, lowercase converter, title case converter, sentence case converter, text formatter, free text converter">
+
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://chethanthegamester.github.io/CreatorKit/text-case-converter/">
+
+  <meta property="og:title" content="Free Text Case Converter | CreatorKit">
+  <meta property="og:description" content="Convert text to uppercase, lowercase, title case and sentence case instantly.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://chethanthegamester.github.io/CreatorKit/text-case-converter/">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #020617;
+      border-bottom: 1px solid #1e293b;
+      padding: 18px 20px;
+    }
+
+    nav {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      color: #38bdf8;
+      font-size: 24px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    nav a {
+      color: #cbd5e1;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #38bdf8;
+    }
+
+    .hero {
+      max-width: 900px;
+      margin: auto;
+      padding: 70px 20px 40px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(34px, 6vw, 58px);
+      color: white;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: auto;
+      color: #94a3b8;
+      font-size: 18px;
+    }
+
+    .tool-box {
+      max-width: 850px;
+      margin: 20px auto 70px;
+      padding: 30px;
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 18px;
+    }
+
+    label {
+      display: block;
+      color: #f8fafc;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 220px;
+      padding: 15px;
+      background: #0f172a;
+      color: white;
+      border: 1px solid #475569;
+      border-radius: 10px;
+      font-size: 16px;
+      resize: vertical;
+      outline: none;
+      margin-bottom: 15px;
+    }
+
+    textarea:focus {
+      border-color: #38bdf8;
+    }
+
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    button {
+      padding: 13px;
+      border: none;
+      border-radius: 9px;
+      background: #38bdf8;
+      color: #082f49;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #7dd3fc;
+    }
+
+    .copy-btn {
+      background: #22c55e;
+      color: #052e16;
+      margin-top: 15px;
+      width: 100%;
+    }
+
+    .copy-btn:hover {
+      background: #4ade80;
+    }
+
+    .clear-btn {
+      background: #64748b;
+      color: white;
+    }
+
+    .clear-btn:hover {
+      background: #94a3b8;
+    }
+
+    .stats {
+      margin-top: 15px;
+      color: #94a3b8;
+      font-size: 14px;
+    }
+
+    .content {
+      max-width: 900px;
+      margin: auto;
+      padding: 0 20px 70px;
+    }
+
+    .content section {
+      margin-bottom: 45px;
+    }
+
+    .content h2 {
+      color: white;
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+
+    .content h3 {
+      color: #38bdf8;
+      margin-top: 25px;
+    }
+
+    .content p,
+    .content li {
+      color: #cbd5e1;
+    }
+
+    .content ul {
+      padding-left: 25px;
+    }
+
+    .faq {
+      border-top: 1px solid #334155;
+      padding: 18px 0;
+    }
+
+    .faq strong {
+      display: block;
+      color: white;
+      margin-bottom: 7px;
+    }
+
+    footer {
+      background: #020617;
+      text-align: center;
+      padding: 30px 20px;
+      color: #64748b;
+      font-size: 14px;
+    }
+
+    footer a {
+      color: #38bdf8;
+      text-decoration: none;
+    }
+
+    @media (max-width: 700px) {
+      nav {
+        flex-direction: column;
+      }
+
+      .tool-box {
+        margin-left: 15px;
+        margin-right: 15px;
+        padding: 20px;
+      }
+
+      .buttons {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 450px) {
+      .buttons {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <nav>
+    <a class="logo" href="../">CreatorKit</a>
+    <a href="../">← Back to CreatorKit</a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="hero">
+    <h1>Free Text Case Converter</h1>
+
+    <p>
+      Convert text to uppercase, lowercase, title case, sentence case
+      and more instantly in your browser.
+    </p>
+  </section>
+
+  <section class="tool-box">
+
+    <label for="inputText">Enter Your Text</label>
+
+    <textarea
+      id="inputText"
+      placeholder="Type or paste your text here..."
+      oninput="updateStats()"
+    ></textarea>
+
+    <div class="buttons">
+
+      <button onclick="convertText('upper')">
+        UPPERCASE
+      </button>
+
+      <button onclick="convertText('lower')">
+        lowercase
+      </button>
+
+      <button onclick="convertText('title')">
+        Title Case
+      </button>
+
+      <button onclick="convertText('sentence')">
+        Sentence case
+      </button>
+
+      <button onclick="convertText('capitalize')">
+        Capitalize Words
+      </button>
+
+      <button class="clear-btn" onclick="clearText()">
+        Clear
+      </button>
+
+    </div>
+
+    <button class="copy-btn" onclick="copyText()">
+      Copy Converted Text
+    </button>
+
+    <div class="stats" id="stats">
+      Characters: 0 | Words: 0
+    </div>
+
+  </section>
+
+  <section class="content">
+
+    <section>
+      <h2>What is a Text Case Converter?</h2>
+
+      <p>
+        A text case converter changes the capitalization of text without
+        requiring you to manually edit every word. It can be useful for
+        documents, social media posts, YouTube descriptions, titles,
+        notes, captions and many other types of writing.
+      </p>
+
+      <p>
+        CreatorKit's free Text Case Converter works directly in your
+        browser, making it quick to transform text whenever you need it.
+      </p>
+    </section>
+
+    <section>
+      <h2>Text Case Options</h2>
+
+      <h3>UPPERCASE</h3>
+
+      <p>
+        Converts every letter to uppercase.
+        Example: "hello world" becomes "HELLO WORLD".
+      </p>
+
+      <h3>lowercase</h3>
+
+      <p>
+        Converts every letter to lowercase.
+        Example: "HELLO WORLD" becomes "hello world".
+      </p>
+
+      <h3>Title Case</h3>
+
+      <p>
+        Capitalizes the first letter of each word.
+        Example: "this is my video" becomes "This Is My Video".
+      </p>
+
+      <h3>Sentence Case</h3>
+
+      <p>
+        Capitalizes the first letter of each sentence while making the
+        remaining letters lowercase.
+      </p>
+
+      <h3>Capitalize Words</h3>
+
+      <p>
+        Capitalizes the first letter of each word while preserving the
+        rest of each word.
+      </p>
+    </section>
+
+    <section>
+      <h2>Why Use a Text Case Converter?</h2>
+
+      <ul>
+        <li>Fix text copied with incorrect capitalization.</li>
+        <li>Format YouTube descriptions and captions.</li>
+        <li>Prepare social media posts.</li>
+        <li>Format headings and titles.</li>
+        <li>Quickly convert large amounts of text.</li>
+        <li>Save time when editing written content.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>How to Use the Tool</h2>
+
+      <h3>1. Enter your text</h3>
+
+      <p>
+        Type or paste text into the text box.
+      </p>
+
+      <h3>2. Choose a case</h3>
+
+      <p>
+        Select the capitalization format you want.
+      </p>
+
+      <h3>3. Copy your result</h3>
+
+      <p>
+        Click the copy button and paste the converted text wherever you
+        need it.
+      </p>
+    </section>
+
+    <section>
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq">
+        <strong>Is this Text Case Converter free?</strong>
+
+        <p>
+          Yes. CreatorKit's Text Case Converter is free to use.
+        </p>
+      </div>
+
+      <div class="faq">
+        <strong>Does the tool upload my text?</strong>
+
+        <p>
+          No. The conversion happens directly in your browser.
+        </p>
+      </div>
+
+      <div class="faq">
+        <strong>Can I use this for YouTube content?</strong>
+
+        <p>
+          Yes. You can use it for YouTube titles, descriptions, captions,
+          comments and other creator content.
+        </p>
+      </div>
+
+      <div class="faq">
+        <strong>Can I convert a large amount of text?</strong>
+
+        <p>
+          Yes. You can paste a large block of text into the converter,
+          subject to your browser's normal limits.
+        </p>
+      </div>
+
+      <div class="faq">
+        <strong>Can I copy the result?</strong>
+
+        <p>
+          Yes. Use the Copy Converted Text button after converting your text.
+        </p>
+      </div>
+
+    </section>
+
+  </section>
+
+</main>
+
+<footer>
+  <p>
+    © 2026 CreatorKit. Free creator tools for YouTubers and content creators.
+  </p>
+
+  <p>
+    <a href="../">CreatorKit Home</a>
+  </p>
+</footer>
+
+<script>
+
+function convertText(type) {
+
+  const textarea = document.getElementById("inputText");
+
+  let text = textarea.value;
+
+  if (!text.trim()) {
+    alert("Please enter some text first.");
+    return;
+  }
+
+  if (type === "upper") {
+
+    text = text.toUpperCase();
+
+  } else if (type === "lower") {
+
+    text = text.toLowerCase();
+
+  } else if (type === "title") {
+
+    text = text
+      .toLowerCase()
+      .replace(/\b\w/g, function(letter) {
+        return letter.toUpperCase();
+      });
+
+  } else if (type === "sentence") {
+
+    text = text
+      .toLowerCase()
+      .replace(/(^\s*\w|[.!?]\s+\w)/g, function(letter) {
+        return letter.toUpperCase();
+      });
+
+  } else if (type === "capitalize") {
+
+    text = text.replace(/\b\w/g, function(letter) {
+      return letter.toUpperCase();
+    });
+  }
+
+  textarea.value = text;
+
+  updateStats();
+}
+
+function copyText() {
+
+  const textarea = document.getElementById("inputText");
+
+  if (!textarea.value.trim()) {
+    alert("There is no text to copy.");
+    return;
+  }
+
+  navigator.clipboard.writeText(textarea.value)
+    .then(function() {
+      alert("Text copied!");
+    })
+    .catch(function() {
+      textarea.select();
+      document.execCommand("copy");
+      alert("Text copied!");
+    });
+}
+
+function clearText() {
+
+  document.getElementById("inputText").value = "";
+
+  updateStats();
+}
+
+function updateStats() {
+
+  const text = document.getElementById("inputText").value;
+
+  const characters = text.length;
+
+  const words = text.trim()
+    ? text.trim().split(/\s+/).length
+    : 0;
+
+  document.getElementById("stats").textContent =
+    "Characters: " + characters + " | Words: " + words;
+}
+
+</script>
+
+</body>
+</html>
