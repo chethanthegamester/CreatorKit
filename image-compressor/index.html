@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Free Image Compressor - Compress Images Online | CreatorKit</title>
+
+  <meta name="description" content="Compress images online for free with CreatorKit. Reduce JPG, PNG and WebP image file sizes directly in your browser while controlling image quality.">
+
+  <meta name="keywords" content="image compressor, compress image online, free image compressor, reduce image size, compress JPG, compress PNG, compress WebP, photo compressor">
+
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://chethanthegamester.github.io/CreatorKit/image-compressor/">
+
+  <meta property="og:title" content="Free Image Compressor Online | CreatorKit">
+  <meta property="og:description" content="Compress images and reduce file size directly in your browser for free.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://chethanthegamester.github.io/CreatorKit/image-compressor/">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #020617;
+      border-bottom: 1px solid #1e293b;
+      padding: 18px 20px;
+    }
+
+    nav {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      color: #38bdf8;
+      font-size: 24px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    nav a {
+      color: #cbd5e1;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #38bdf8;
+    }
+
+    .hero {
+      max-width: 900px;
+      margin: auto;
+      padding: 70px 20px 40px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(34px, 6vw, 58px);
+      color: white;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: auto;
+      color: #94a3b8;
+      font-size: 18px;
+    }
+
+    .tool-box {
+      max-width: 800px;
+      margin: 20px auto 70px;
+      padding: 30px;
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 18px;
+    }
+
+    .upload-area {
+      border: 2px dashed #475569;
+      border-radius: 14px;
+      padding: 35px 20px;
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .upload-area p {
+      color: #94a3b8;
+      margin-bottom: 15px;
+    }
+
+    input[type="file"] {
+      width: 100%;
+      padding: 12px;
+      background: #0f172a;
+      color: #cbd5e1;
+      border: 1px solid #475569;
+      border-radius: 10px;
+    }
+
+    .controls {
+      display: none;
+      margin-top: 20px;
+    }
+
+    label {
+      display: block;
+      color: #f8fafc;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    input[type="range"] {
+      width: 100%;
+      margin: 10px 0;
+      accent-color: #38bdf8;
+    }
+
+    .quality-value {
+      text-align: center;
+      color: #38bdf8;
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    button {
+      width: 100%;
+      padding: 15px;
+      border: none;
+      border-radius: 10px;
+      background: #38bdf8;
+      color: #082f49;
+      font-size: 17px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background: #7dd3fc;
+    }
+
+    .download-btn {
+      display: none;
+      width: 100%;
+      padding: 15px;
+      border-radius: 10px;
+      background: #22c55e;
+      color: #052e16;
+      text-decoration: none;
+      text-align: center;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+
+    .stats {
+      display: none;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin-top: 25px;
+    }
+
+    .stat {
+      background: #0f172a;
+      border: 1px solid #334155;
+      border-radius: 10px;
+      padding: 18px;
+      text-align: center;
+    }
+
+    .stat strong {
+      display: block;
+      color: #38bdf8;
+      font-size: 22px;
+      margin-bottom: 5px;
+    }
+
+    .stat span {
+      color: #94a3b8;
+      font-size: 14px;
+    }
+
+    .content {
+      max-width: 900px;
+      margin: auto;
+      padding: 0 20px 70px;
+    }
+
+    .content section {
+      margin-bottom: 45px;
+    }
+
+    .content h2 {
+      color: white;
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+
+    .content h3 {
+      color: #38bdf8;
+      margin-top: 25px;
+    }
+
+    .content p,
+    .content li {
+      color: #cbd5e1;
+    }
+
+    .content ul {
+      padding-left: 25px;
+    }
+
+    .faq {
+      border-top: 1px solid #334155;
+      padding: 18px 0;
+    }
+
+    .faq strong {
+      display: block;
+      color: white;
+      margin-bottom: 7px;
+    }
+
+    footer {
+      background: #020617;
+      text-align: center;
+      padding: 30px 20px;
+      color: #64748b;
+      font-size: 14px;
+    }
+
+    footer a {
+      color: #38bdf8;
+      text-decoration: none;
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+      }
+
+      .tool-box {
+        margin-left: 15px;
+        margin-right: 15px;
+        padding: 20px;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <nav>
+    <a class="logo" href="../">CreatorKit</a>
+    <a href="../">← Back to CreatorKit</a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="hero">
+    <h1>Free Image Compressor</h1>
+
+    <p>
+      Reduce image file sizes online for free. Compress images directly
+      in your browser without sending them to a server.
+    </p>
+  </section>
+
+  <section class="tool-box">
+
+    <div class="upload-area">
+      <p>Select an image to compress.</p>
+
+      <input
+        type="file"
+        id="imageInput"
+        accept="image/*"
+      >
+    </div>
+
+    <div class="controls" id="controls">
+
+      <label for="quality">
+        Compression Quality
+      </label>
+
+      <input
+        type="range"
+        id="quality"
+        min="10"
+        max="100"
+        value="75"
+      >
+
+      <div class="quality-value">
+        <span id="qualityValue">75</span>%
+      </div>
+
+      <button onclick="compressImage()">
+        Compress Image
+      </button>
+
+    </div>
+
+    <div class="stats" id="stats">
+
+      <div class="stat">
+        <strong id="originalSize">-</strong>
+        <span>Original Size</span>
+      </div>
+
+      <div class="stat">
+        <strong id="compressedSize">-</strong>
+        <span>Compressed Size</span>
+      </div>
+
+      <div class="stat">
+        <strong id="savedPercent">-</strong>
+        <span>Size Reduction</span>
+      </div>
+
+      <div class="stat">
+        <strong id="formatText">JPG</strong>
+        <span>Output Format</span>
+      </div>
+
+    </div>
+
+    <a
+      id="downloadBtn"
+      class="download-btn"
+      download="compressed-image.jpg"
+    >
+      Download Compressed Image
+    </a>
+
+  </section>
+
+  <section class="content">
+
+    <section>
+      <h2>What is an Image Compressor?</h2>
+
+      <p>
+        An image compressor reduces the amount of data needed to store an
+        image. Smaller image files can be easier to upload, share and
+        store, and can help reduce the amount of data a website needs
+        to load.
+      </p>
+
+      <p>
+        CreatorKit's image compressor lets you choose a quality level and
+        process the image directly in your browser.
+      </p>
+    </section>
+
+    <section>
+      <h2>How to Compress an Image</h2>
+
+      <h3>1. Choose an image</h3>
+
+      <p>
+        Select a JPG, PNG, WebP or another image format supported by
+        your browser.
+      </p>
+
+      <h3>2. Choose compression quality</h3>
+
+      <p>
+        Use the quality slider to choose the balance between file size
+        and visual quality.
+      </p>
+
+      <h3>3. Compress the image</h3>
+
+      <p>
+        Click the compression button and CreatorKit will process the
+        image in your browser.
+      </p>
+
+      <h3>4. Download your image</h3>
+
+      <p>
+        Check the resulting file size and download the compressed image
+        if the result looks good.
+      </p>
+    </section>
+
+    <section>
+      <h2>Why Compress Images?</h2>
+
+      <ul>
+        <li>Reduce file sizes before uploading images.</li>
+        <li>Make images easier to share online.</li>
+        <li>Save storage space.</li>
+        <li>Prepare images for websites.</li>
+        <li>Reduce the size of images used in projects.</li>
+        <li>Make large photos easier to upload.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Image Compression Tips</h2>
+
+      <p>
+        Higher quality generally produces a larger file, while lower
+        quality can produce a smaller file with more visible compression.
+        Try different settings to find the balance that works for your
+        particular image.
+      </p>
+
+      <p>
+        If you need to change the pixel dimensions of an image, use the
+        CreatorKit Image Resizer instead.
+      </p>
+    </section>
+
+    <section>
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq">
+        <strong>Is this image compressor free?</strong>
+
+        <p>
+          Yes. CreatorKit's image compressor is free to use.
+        </p>
+      </div>
+
+      <div class="faq">
+        <strong>Are my images uploaded to a server?</strong>
+
+        <p>
+          No. The compression process happens directly in your browser.
+        </p>
+      </div>
+
+      <div class="faq">
+        <strong>Does compression reduce image quality?</strong>
+
+        <p>
+          Depending on the selected quality level, compression can reduce
+          visual quality. Higher quality settings generally preserve more
+          detail.
+        </p>
+      </div>
+
+      <div class="faq">
+        <strong>Can I compress JPG and PNG images?</strong>
+
+        <p>
+          Yes. The tool accepts common browser-supported image formats.
+          The compressed output is generated as a JPG file.
+        </p>
+      </div>
+
+      <div class="faq">
+        <strong>Can compression make an image smaller than the original?</strong>
+
+        <p>
+          Often yes, although the exact reduction depends on the original
+          image, its format, dimensions and selected quality.
+        </p>
+      </div>
+
+    </section>
+
+  </section>
+
+</main>
+
+<footer>
+  <p>
+    © 2026 CreatorKit. Free creator tools for YouTubers and content creators.
+  </p>
+
+  <p>
+    <a href="../">CreatorKit Home</a>
+  </p>
+</footer>
+
+<script>
+
+const imageInput = document.getElementById("imageInput");
+const qualityInput = document.getElementById("quality");
+const qualityValue = document.getElementById("qualityValue");
+
+let selectedFile = null;
+let image = null;
+
+qualityInput.addEventListener("input", function() {
+  qualityValue.textContent = this.value;
+});
+
+imageInput.addEventListener("change", function() {
+
+  selectedFile = this.files[0];
+
+  if (!selectedFile) {
+    return;
+  }
+
+  if (!selectedFile.type.startsWith("image/")) {
+    alert("Please select a valid image.");
+    return;
+  }
+
+  const reader = new FileReader();
+
+  reader.onload = function(event) {
+
+    image = new Image();
+
+    image.onload = function() {
+      document.getElementById("controls").style.display = "block";
+      document.getElementById("stats").style.display = "none";
+      document.getElementById("downloadBtn").style.display = "none";
+    };
+
+    image.src = event.target.result;
+  };
+
+  reader.readAsDataURL(selectedFile);
+});
+
+function formatBytes(bytes) {
+
+  if (bytes === 0) {
+    return "0 Bytes";
+  }
+
+  const units = [
+    "Bytes",
+    "KB",
+    "MB",
+    "GB"
+  ];
+
+  const index = Math.floor(
+    Math.log(bytes) / Math.log(1024)
+  );
+
+  return (
+    bytes / Math.pow(1024, index)
+  ).toFixed(2) + " " + units[index];
+}
+
+function compressImage() {
+
+  if (!selectedFile || !image) {
+    alert("Please select an image first.");
+    return;
+  }
+
+  const quality = Number(qualityInput.value) / 100;
+
+  const canvas = document.createElement("canvas");
+
+  canvas.width = image.width;
+  canvas.height = image.height;
+
+  const context = canvas.getContext("2d");
+
+  context.drawImage(
+    image,
+    0,
+    0,
+    image.width,
+    image.height
+  );
+
+  canvas.toBlob(
+    function(blob) {
+
+      if (!blob) {
+        alert("Compression failed. Please try another image.");
+        return;
+      }
+
+      const url = URL.createObjectURL(blob);
+
+      const originalBytes = selectedFile.size;
+      const compressedBytes = blob.size;
+
+      let reduction = 0;
+
+      if (originalBytes > 0) {
+        reduction =
+          ((originalBytes - compressedBytes) /
+          originalBytes) * 100;
+      }
+
+      document.getElementById("originalSize").textContent =
+        formatBytes(originalBytes);
+
+      document.getElementById("compressedSize").textContent =
+        formatBytes(compressedBytes);
+
+      document.getElementById("savedPercent").textContent =
+        Math.max(0, reduction).toFixed(1) + "%";
+
+      document.getElementById("formatText").textContent =
+        "JPG";
+
+      document.getElementById("stats").style.display = "grid";
+
+      const downloadBtn =
+        document.getElementById("downloadBtn");
+
+      downloadBtn.href = url;
+      downloadBtn.style.display = "block";
+
+    },
+    "image/jpeg",
+    quality
+  );
+}
+
+</script>
+
+</body>
+</html>
