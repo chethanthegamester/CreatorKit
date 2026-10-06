@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Hashtag Generator — Free YouTube & Social Hashtags | CreatorKit</title>
+
+<meta name="description" content="Generate hashtag ideas for YouTube, gaming, Shorts, Instagram and social media with CreatorKit's free Hashtag Generator.">
+
+<meta name="keywords" content="hashtag generator, YouTube hashtag generator, gaming hashtags, YouTube Shorts hashtags, Instagram hashtag generator, free hashtag generator">
+
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://chethanthegamester.github.io/CreatorKit/hashtag-generator/">
+
+<style>
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #080b14;
+  color: #f5f7ff;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: 92%;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* NAV */
+
+nav {
+  background: #080b14;
+  border-bottom: 1px solid #20263a;
+}
+
+.nav-inner {
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.logo span {
+  color: #718cff;
+}
+
+.back {
+  color: #aab3ca;
+}
+
+/* HERO */
+
+.hero {
+  text-align: center;
+  padding: 70px 20px 40px;
+}
+
+.hero h1 {
+  font-size: clamp(38px, 6vw, 58px);
+  margin-bottom: 15px;
+}
+
+.hero p {
+  max-width: 720px;
+  margin: auto;
+  color: #aab3ca;
+  font-size: 18px;
+}
+
+/* TOOL */
+
+.tool-box {
+  max-width: 700px;
+  margin: 20px auto 60px;
+  padding: 25px;
+  background: #101523;
+  border: 1px solid #252e46;
+  border-radius: 18px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+input {
+  width: 100%;
+  padding: 15px;
+  background: #080b14;
+  color: white;
+  border: 1px solid #303a55;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+input:focus {
+  outline: none;
+  border-color: #718cff;
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 15px;
+  border: none;
+  border-radius: 10px;
+  background: #607cff;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #718cff;
+}
+
+/* RESULT */
+
+.result-box {
+  margin-top: 20px;
+  background: #080b14;
+  border: 1px solid #252e46;
+  border-radius: 12px;
+  padding: 18px;
+  min-height: 80px;
+}
+
+.hashtags {
+  color: #9db0ff;
+  font-size: 17px;
+  word-break: break-word;
+}
+
+.copy-button {
+  margin-top: 12px;
+  background: #202b49;
+}
+
+/* CONTENT */
+
+.content {
+  padding-bottom: 60px;
+}
+
+.content h2 {
+  font-size: 30px;
+  margin: 35px 0 12px;
+}
+
+.content p {
+  color: #aab3ca;
+  margin-bottom: 15px;
+}
+
+/* FAQ */
+
+.faq {
+  background: #101523;
+  border: 1px solid #202940;
+  border-radius: 12px;
+  padding: 18px;
+  margin-top: 12px;
+}
+
+.faq h3 {
+  font-size: 17px;
+  margin-bottom: 7px;
+}
+
+/* FOOTER */
+
+footer {
+  border-top: 1px solid #20263a;
+  padding: 30px 0;
+  text-align: center;
+  color: #7f899f;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+<div class="container nav-inner">
+
+<a href="../" class="logo">
+Creator<span>Kit</span>
+</a>
+
+<a href="../" class="back">
+← All Tools
+</a>
+
+</div>
+
+</nav>
+
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="container">
+
+<h1>Hashtag Generator</h1>
+
+<p>
+Generate hashtag ideas for YouTube, gaming,
+Shorts, Instagram and social media.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- TOOL -->
+
+<div class="container">
+
+<div class="tool-box">
+
+<label for="topic">
+Enter your topic
+</label>
+
+<input
+id="topic"
+type="text"
+placeholder="Example: Roblox gaming"
+>
+
+<button onclick="generateHashtags()">
+Generate Hashtags
+</button>
+
+
+<div class="result-box">
+
+<div id="result" class="hashtags">
+Your hashtags will appear here.
+</div>
+
+<button
+class="copy-button"
+onclick="copyHashtags()"
+>
+Copy Hashtags
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- SEO CONTENT -->
+
+<div class="content">
+
+
+<h2>Free Hashtag Generator</h2>
+
+<p>
+Hashtags can help organize and describe content
+on social media platforms. CreatorKit's free
+Hashtag Generator gives you hashtag ideas based
+on the topic you enter.
+</p>
+
+<p>
+Enter your video topic, game, hobby or content
+category and generate a collection of hashtag
+ideas that you can review before publishing.
+</p>
+
+
+
+<h2>YouTube Hashtag Generator</h2>
+
+<p>
+YouTube creators can use relevant hashtags to
+help categorize their videos. Enter a topic such
+as gaming, Roblox, Minecraft, technology or
+YouTube Shorts to generate ideas.
+</p>
+
+
+
+<h2>Gaming Hashtag Generator</h2>
+
+<p>
+Gaming creators can generate hashtag ideas for
+gameplay videos, livestreams, Shorts and gaming
+social media posts.
+</p>
+
+
+
+<h2>How to use the Hashtag Generator</h2>
+
+<p>
+<strong>1.</strong> Enter your topic.
+</p>
+
+<p>
+<strong>2.</strong> Click "Generate Hashtags".
+</p>
+
+<p>
+<strong>3.</strong> Review the generated hashtags.
+</p>
+
+<p>
+<strong>4.</strong> Copy the hashtags you want to use.
+</p>
+
+<p>
+<strong>5.</strong> Only use hashtags that are relevant
+to your actual content.
+</p>
+
+
+
+<h2>Hashtag Tips for Creators</h2>
+
+<p>
+Use hashtags that are actually related to your
+content. Avoid filling your posts with unrelated
+popular hashtags simply because they are trending.
+</p>
+
+<p>
+A smaller collection of relevant hashtags can be
+more useful than a huge list of unrelated ones.
+Always check the current rules and best practices
+of the platform you're posting on.
+</p>
+
+
+
+<h2>Frequently Asked Questions</h2>
+
+
+
+<div class="faq">
+
+<h3>
+Is this Hashtag Generator free?
+</h3>
+
+<p>
+Yes. You can generate hashtag ideas for free
+without creating an account.
+</p>
+
+</div>
+
+
+
+<div class="faq">
+
+<h3>
+Can I use these hashtags on YouTube?
+</h3>
+
+<p>
+Yes. The generated hashtags can be used as
+inspiration for relevant YouTube content.
+</p>
+
+</div>
+
+
+
+<div class="faq">
+
+<h3>
+Can I use these hashtags for gaming?
+</h3>
+
+<p>
+Yes. Enter the name of your game or gaming topic
+to generate gaming-related hashtags.
+</p>
+
+</div>
+
+
+
+<div class="faq">
+
+<h3>
+Will hashtags guarantee more views?
+</h3>
+
+<p>
+No. Hashtags cannot guarantee views, subscribers
+or viral content. Your content and audience are
+much more important.
+</p>
+
+</div>
+
+
+
+<div class="faq">
+
+<h3>
+Should I use every generated hashtag?
+</h3>
+
+<p>
+No. Choose hashtags that are relevant to your
+content and platform.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="container">
+
+<p>
+© 2026 CreatorKit — Free tools for creators.
+</p>
+
+</div>
+
+</footer>
+
+
+
+<script>
+
+let generatedHashtags = "";
+
+
+function generateHashtags() {
+
+
+const topic =
+document
+.getElementById("topic")
+.value
+.trim();
+
+
+const result =
+document
+.getElementById("result");
+
+
+if (!topic) {
+
+result.textContent =
+"Please enter a topic first.";
+
+return;
+
+}
+
+
+/* Convert words into hashtags */
+
+const words = topic
+.replace(/[^a-zA-Z0-9 ]/g, "")
+.split(/\s+/)
+.filter(Boolean);
+
+
+const baseTags = [
+
+"#YouTube",
+"#YouTuber",
+"#ContentCreator",
+"#Creator",
+"#Video",
+"#Shorts",
+"#YouTubeShorts",
+"#Gaming",
+"#Gamer",
+"#GamingCommunity",
+"#Viral",
+"#Trending",
+"#NewVideo",
+"#CreatorLife"
+
+];
+
+
+const topicTags = words.map(function(word) {
+
+return "#" + word;
+
+});
+
+
+const combined = [
+
+...topicTags,
+
+...baseTags
+
+];
+
+
+/* Remove duplicates */
+
+const unique = [
+
+...new Set(combined)
+
+];
+
+
+/* Take first 20 */
+
+generatedHashtags =
+unique.slice(0,20).join(" ");
+
+
+result.textContent =
+generatedHashtags;
+
+}
+
+
+
+function copyHashtags() {
+
+
+if (!generatedHashtags) {
+
+alert("Generate hashtags first.");
+
+return;
+
+}
+
+
+navigator.clipboard.writeText(
+generatedHashtags
+);
+
+
+const button =
+document.querySelector(".copy-button");
+
+
+const oldText =
+button.textContent;
+
+
+button.textContent =
+"✓ Hashtags Copied!";
+
+
+setTimeout(function() {
+
+button.textContent = oldText;
+
+},1500);
+
+
+}
+
+</script>
+
+
+</body>
+
+</html>
