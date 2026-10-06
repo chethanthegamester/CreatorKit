@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>YouTube Title Generator — Free Tool | CreatorKit</title>
+
+  <meta name="description" content="Generate catchy YouTube title ideas for gaming, tutorials, Shorts and more with CreatorKit's free YouTube Title Generator.">
+
+  <meta name="keywords" content="YouTube title generator, free YouTube title generator, gaming title generator, YouTube title ideas, video title generator">
+
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://chethanthegamester.github.io/CreatorKit/youtube-title-generator/">
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #080b14;
+      color: #f5f7ff;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: 92%;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    nav {
+      border-bottom: 1px solid #20263a;
+      background: #080b14;
+    }
+
+    .nav-inner {
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: 800;
+    }
+
+    .logo span {
+      color: #718cff;
+    }
+
+    .back {
+      color: #aab3ca;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 70px 20px 40px;
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 6vw, 58px);
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: auto;
+      color: #aab3ca;
+      font-size: 18px;
+    }
+
+    .tool-box {
+      max-width: 700px;
+      margin: 20px auto 60px;
+      background: #101523;
+      border: 1px solid #252e46;
+      border-radius: 18px;
+      padding: 25px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      padding: 15px;
+      border-radius: 10px;
+      border: 1px solid #303a55;
+      background: #080b14;
+      color: white;
+      font-size: 16px;
+      outline: none;
+    }
+
+    input:focus {
+      border-color: #718cff;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 15px;
+      padding: 14px;
+      border: none;
+      border-radius: 10px;
+      background: #607cff;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #718cff;
+    }
+
+    #results {
+      margin-top: 20px;
+    }
+
+    .title-result {
+      background: #080b14;
+      border: 1px solid #252e46;
+      border-radius: 10px;
+      padding: 14px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+
+    .title-result:hover {
+      border-color: #607cff;
+    }
+
+    .copy-note {
+      color: #7f899f;
+      font-size: 13px;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    .content {
+      padding-bottom: 60px;
+    }
+
+    .content h2 {
+      margin: 35px 0 12px;
+      font-size: 30px;
+    }
+
+    .content p {
+      color: #aab3ca;
+      margin-bottom: 15px;
+    }
+
+    .faq {
+      margin-top: 15px;
+      background: #101523;
+      border: 1px solid #202940;
+      border-radius: 12px;
+      padding: 18px;
+    }
+
+    .faq h3 {
+      font-size: 17px;
+      margin-bottom: 7px;
+    }
+
+    footer {
+      border-top: 1px solid #20263a;
+      padding: 30px 0;
+      color: #7f899f;
+      text-align: center;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<nav>
+
+  <div class="container nav-inner">
+
+    <a href="../" class="logo">
+      Creator<span>Kit</span>
+    </a>
+
+    <a href="../" class="back">
+      ← All Tools
+    </a>
+
+  </div>
+
+</nav>
+
+
+<section class="hero">
+
+  <div class="container">
+
+    <h1>YouTube Title Generator</h1>
+
+    <p>
+      Generate catchy YouTube title ideas for gaming videos,
+      tutorials, Shorts, challenges and more.
+    </p>
+
+  </div>
+
+</section>
+
+
+<div class="container">
+
+  <div class="tool-box">
+
+    <label for="topic">
+      What is your video about?
+    </label>
+
+    <input
+      id="topic"
+      type="text"
+      placeholder="Example: Roblox survival challenge"
+    >
+
+    <button onclick="generateTitles()">
+      Generate YouTube Titles
+    </button>
+
+    <div id="results"></div>
+
+    <p class="copy-note">
+      Click a generated title to copy it.
+    </p>
+
+  </div>
+
+
+  <div class="content">
+
+    <h2>Free YouTube Title Generator</h2>
+
+    <p>
+      A good YouTube title can help communicate what your video
+      is about and make viewers curious. CreatorKit's YouTube
+      Title Generator gives you quick title ideas that you can
+      edit and customize for your own content.
+    </p>
+
+    <p>
+      Enter your video topic above and generate several title
+      ideas. You can use them for gaming videos, tutorials,
+      challenges, reviews, Shorts and many other types of content.
+    </p>
+
+
+    <h2>How to use the YouTube Title Generator</h2>
+
+    <p>
+      <strong>1.</strong> Enter your video topic in the box.
+    </p>
+
+    <p>
+      <strong>2.</strong> Click "Generate YouTube Titles".
+    </p>
+
+    <p>
+      <strong>3.</strong> Review the generated ideas.
+    </p>
+
+    <p>
+      <strong>4.</strong> Click a title to copy it.
+    </p>
+
+    <p>
+      <strong>5.</strong> Edit the title so it accurately represents
+      your actual video.
+    </p>
+
+
+    <h2>YouTube Title Ideas for Gaming</h2>
+
+    <p>
+      Gaming channels can use the generator to brainstorm titles
+      for challenges, gameplay, updates, tutorials and experiments.
+      For example, instead of simply calling a video
+      "Roblox Gameplay", you could brainstorm titles around the
+      challenge, result or unusual event in the video.
+    </p>
+
+
+    <h2>Frequently Asked Questions</h2>
+
+
+    <div class="faq">
+
+      <h3>Is this YouTube Title Generator free?</h3>
+
+      <p>
+        Yes. You can use the tool for free without creating an account.
+      </p>
+
+    </div>
+
+
+    <div class="faq">
+
+      <h3>Will these titles guarantee more views?</h3>
+
+      <p>
+        No. A title cannot guarantee views or subscribers.
+        Your video's content, thumbnail, audience and viewer
+        satisfaction are also important.
+      </p>
+
+    </div>
+
+
+    <div class="faq">
+
+      <h3>Can I use these titles for gaming videos?</h3>
+
+      <p>
+        Yes. Enter your game or gaming topic and use the generated
+        ideas as a starting point.
+      </p>
+
+    </div>
+
+
+    <div class="faq">
+
+      <h3>Can I edit the generated titles?</h3>
+
+      <p>
+        Absolutely. You should customize the title so it accurately
+        describes your actual video.
+      </p>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<footer>
+
+  <div class="container">
+
+    <p>
+      © 2026 CreatorKit — Free tools for creators.
+    </p>
+
+  </div>
+
+</footer>
+
+
+<script>
+
+function generateTitles() {
+
+  const topic =
+    document.getElementById("topic").value.trim();
+
+  const results =
+    document.getElementById("results");
+
+  if (!topic) {
+
+    results.innerHTML =
+      "<p style='color:#ff8d8d;margin-top:15px;'>Please enter a video topic first.</p>";
+
+    return;
+
+  }
+
+
+  const titles = [
+
+    `I Tried ${topic}... Here's What Happened!`,
+
+    `The ULTIMATE ${topic} Challenge`,
+
+    `You Won't Believe What Happened in ${topic}`,
+
+    `I Tested ${topic} So You Don't Have To`,
+
+    `The Secret to ${topic}`,
+
+    `${topic} But Everything Went WRONG`,
+
+    `10 Things You Need to Know About ${topic}`,
+
+    `I Spent 24 Hours Doing ${topic}`,
+
+    `The BEST Way to Try ${topic}`,
+
+    `Nobody Told Me This About ${topic}`
+
+  ];
+
+
+  results.innerHTML = "";
+
+
+  titles.forEach(function(title) {
+
+    const div =
+      document.createElement("div");
+
+    div.className = "title-result";
+
+    div.textContent = title;
+
+
+    div.onclick = function() {
+
+      navigator.clipboard.writeText(title);
+
+      div.textContent =
+        "✓ Copied: " + title;
+
+      setTimeout(function() {
+
+        div.textContent = title;
+
+      }, 1200);
+
+    };
+
+
+    results.appendChild(div);
+
+  });
+
+}
+
+</script>
+
+
+</body>
+</html>
